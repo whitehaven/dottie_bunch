@@ -229,3 +229,6 @@ alias ac-updated_with_pip="conda list | grep pip | cut -d' ' -f1"
 
 # added by Anaconda3 4.3.1 installer
 export PATH="/Users/accrist/anaconda3/bin:$PATH"
+
+# prompt that shows taskwarrior context (and reminds to set context by just showing t:context when none selected)
+export PS1="\u@\h \w (t:\$(task context show | cut -d' ' -f2 | tr -d \"'\")) -> "
