@@ -10,11 +10,16 @@ call vundle#begin()
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
 
-Plugin 'bling/vim-airline'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
 
 Plugin 'scrooloose/nerdtree'
 
 Plugin 'ervandew/supertab'
+
+Plugin 'tmhedberg/SimpylFold'
+
+Plugin 'altercation/vim-colors-solarized'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -32,8 +37,12 @@ filetype plugin indent on    " required
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
 
+colorscheme solarized
+
 " syntax highlighting
 syntax on
+
+set encoding=utf-8
 
 " show line number
 set number
@@ -43,8 +52,17 @@ set relativenumber
 " leave margin
 set scrolloff=7
 
+let python_highlight_all=1
+syntax on
 
 " show trailing whitespace as error
 match ErrorMsg '\s\+$'
 " and delete it with <Leader>rtw
 nnoremap <Leader>rtw :%s/\s\+$//e<CR>
+
+" airline stuff
+set laststatus=2
+set ttimeoutlen=50
+
+let g:airline_theme='powerlineish'
+
