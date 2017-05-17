@@ -42,5 +42,13 @@ report._reviewed.description=Tasksh review report.  Adjust the filter to your ne
 report._reviewed.columns=uuid
 report._reviewed.sort=reviewed+,modified+
 report._reviewed.filter=( reviewed.none: or reviewed.before:now-1week ) and ( +PENDING or +WAITING )
-context.at_work=-home -intown
-context.at_home=-work
+context.work=-home -in_town
+context.home=-work
+context.away=-work -home
+context.mtg=-work -home -in_town
+
+# inbox report
+report.in.columns = id,description
+report.in.description = inbox
+report.in.filter = status:pending limit:page (+in)
+report.in.labels = ID,Description
