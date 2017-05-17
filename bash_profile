@@ -7,7 +7,7 @@ function submerge()
 	"$@" > /dev/null 2>&1 &
 }
 
-function push 
+function push
 {
     curl -s -F "token=aLR1xKbgFKrojR9nK2Nwh2HffKS7JA" \
     -F "user=u587gmq6kBmzEHpRgirFU5vXposA3P" \
@@ -18,7 +18,7 @@ function push
 export EDITOR="/usr/local/bin/mate -w"
 export VISUAL="/usr/bin/vim"
 
-alias ls='ls -F' 
+alias ls='ls -F'
 
 if [ -f "$(brew --prefix bash-git-prompt)/share/gitprompt.sh" ]; then
   GIT_PROMPT_THEME=Default
@@ -198,7 +198,7 @@ spotlight () { mdfind "kMDItemDisplayName == '$@'wc"; }
 
 	#   cleanupLS:  Clean up LaunchServices to remove duplicates in the "Open With" menu
 	#   ---------------------------------------------------------------------------------
-    alias cleanupOpenWith="/System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -kill -r -domain local -domain system -domain user && killall Finder"
+   alias cleanupOpenWith="/System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -kill -r -domain local -domain system -domain user && killall Finder"
 
 function ac-full-upgrade
 {
@@ -231,4 +231,18 @@ alias ac-updated_with_pip="conda list | grep pip | cut -d' ' -f1"
 export PATH="/Users/accrist/anaconda3/bin:$PATH"
 
 # prompt that shows taskwarrior context (and reminds to set context by just showing t:context when none selected)
-export PS1="\u@\h \w (t:\$(task context show | cut -d' ' -f2 | tr -d \"'\")) -> "
+export PS1="\u@\h \w [t:\$(task context show | cut -d' ' -f2 | tr -d \"'\")=\$(task +PENDING count)|in=\$(task +in +PENDING count)] -> "
+
+# taskwarrior shortcuts
+alias t='task '
+alias tn='task next'
+alias trd='task ready'
+alias tc='task context '
+alias tcn='task context none'
+alias ta='task add '
+alias ts='task sync'
+
+alias tref='task sync; clear; task ready;'
+
+# ultra-fast inbox, auto-adds tag on the way in
+alias in='task add +in'
