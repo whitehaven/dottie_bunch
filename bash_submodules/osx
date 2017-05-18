@@ -1,0 +1,44 @@
+
+# Set up bash completion
+if [ -f $(brew --prefix)/etc/bash_completion ]; then
+. $(brew --prefix)/etc/bash_completion
+fi
+
+export EDITOR="/usr/local/bin/mate -w"
+
+# go to open dir in macOS Finder.app
+cdf()
+{
+	target=`osascript -e 'tell application "Finder" to if (count of Finder windows) > 0 then get POSIX path of (target of front Finder window as text)'`
+		if [ "$target" != "" ];
+	then
+		cd "$target";
+	pwd;
+		else
+			echo 'No Finder window found' >&2;
+	fi
+}
+
+
+# Emergency Shutdown
+alias pmset-shutdownnow='sudo /sbin/shutdown -h now'
+
+
+# Quicklook file
+ql () { qlmanage -p "$*" >& /dev/null; }
+
+
+# copy the working directory path
+alias cpwd='pwd|tr -d "\n"|pbcopy'
+
+#copy output of last command to clipboard
+alias cl="fc -e -|pbcopy"
+
+
+# cleanupLS:  Clean up LaunchServices to remove duplicates in the "Open With" menu
+alias cleanupOpenWith="/System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -kill -r -domain local -domain system -domain user && killall Finder"
+
+
+# added by Anaconda3 4.3.1 installer
+export PATH="/Users/accrist/anaconda3/bin:$PATH"
+
