@@ -1,0 +1,42 @@
+alias ac_cd_internal_mem="cd /mnt/sdcard"
+internal_mem=/mnt/sdcard
+
+# cd fun
+alias ..="cd .."
+alias cd..="cd .."
+
+# classic ls extensions
+alias ll="ls -al"
+
+alias h='history'
+alias c='clear'
+
+# make mv/cp interactive in case of overwrite and verbose 
+alias mv="mv -iv"
+alias cp="cp -iv"
+
+function update_etc()
+{
+	echo "--> Updating pip repos and termux-apt."
+	pip freeze > tmp_reqs.txt
+	pip install --upgrade -r tmp_reqs.txt &&
+		rm tmp_reqs.txt ||
+		echo "pip upgrade failed"
+	apt update > /dev/null
+	apt full-upgrade
+	apt autoremove
+	apt clean
+	echo "==> Updates complete."
+}
+
+alias ta='task add'
+alias ts='task sync '
+alias tc='task context '
+alias tcn='task context none'
+alias trd='task ready'
+alias tn='task next'
+alias t='task'
+
+# bash prompt
+
+PS1="(\[\e[37;1m\]jobs:\j\[\e[32;1m\])-(\[\e[37;1m\]\w\[\e[32;1m\])-(\[\[\e[37;1m\]! \!\[\e[32;1m\])-> \[\e[0m\]"
