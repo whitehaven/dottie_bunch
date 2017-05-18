@@ -30,6 +30,3 @@ context.away=-home -work
 context.mtg=-work -home -in_town
 
 include /data/data/com.termux/files/usr/share/doc/task/rc/solarized-dark-256.theme
-
-context=home
-
