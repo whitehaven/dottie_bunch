@@ -37,6 +37,7 @@ alias trd='task ready'
 alias tn='task next'
 alias t='task'
 
+alias in='task add +in'
 # bash prompt
 
 PS1="(\[\e[37;1m\]jobs:\j\[\e[32;1m\])-(\[\e[37;1m\]\w\[\e[32;1m\])-(\[\[\e[37;1m\]! \!\[\e[32;1m\])-> \[\e[0m\]"
