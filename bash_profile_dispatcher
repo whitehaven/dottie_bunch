@@ -1,8 +1,7 @@
 #!/bin/bash
-if [ $( uname ) = "Linux" ]; then
-	echo "linux"
-elif [ $( uname ) = "Darwin" ]; then
-	echo "macOS"
-else
-	echo "not"
+if [ $( uname ) = "Darwin" ]; then
+	source bash_submodules/osx
 fi
+
+source bash_submodules/unix
+
