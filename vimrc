@@ -26,6 +26,10 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'airblade/vim-gitgutter'
 set updatetime=250
 
+Plugin 'ntpeters/vim-better-whitespace'
+
+Bundle 'farseer90718/vim-taskwarrior'
+
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -59,11 +63,6 @@ set scrolloff=7
 
 let python_highlight_all=1
 syntax on
-
-" show trailing whitespace as error
-match ErrorMsg '\s\+$'
-" and delete it with <Leader>rtw
-nnoremap <Leader>rtw :%s/\s\+$//e<CR>
 
 " airline stuff
 set laststatus=2
