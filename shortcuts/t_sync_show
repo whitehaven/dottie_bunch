@@ -1,0 +1,4 @@
+task sync
+task ready
+bash -i
+
