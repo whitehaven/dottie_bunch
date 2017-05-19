@@ -18,8 +18,6 @@ Plugin 'scrooloose/nerdtree'
 
 Plugin 'ervandew/supertab'
 
-Plugin 'tmhedberg/SimpylFold'
-
 Plugin 'altercation/vim-colors-solarized'
 
 Plugin 'tpope/vim-fugitive'
@@ -31,9 +29,17 @@ Plugin 'ntpeters/vim-better-whitespace'
 
 Bundle 'farseer90718/vim-taskwarrior'
 
+Plugin 'tbabej/taskwiki'
+
+Plugin 'pseewald/vim-anyfold'
+
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
+
+" per anyfold docs:
+let anyfold_activate=1
+set foldlevel=0
 
 " To ignore plugin indent changes, instead use:
 "filetype plugin on
