@@ -29,9 +29,23 @@ Plugin 'ntpeters/vim-better-whitespace'
 
 Bundle 'farseer90718/vim-taskwarrior'
 
+" atypical install, note manual install in .vim/ :
+" I ran git clone --branch=dev git@github.com:vimwiki/vimwiki.git vim/.vim/bundle
+Plugin 'https://github.com/vimwiki/vimwiki.git'
+
 Plugin 'tbabej/taskwiki'
+" supposed color enhancement for taskwiki and tw in general
+Plugin 'powerman/vim-plugin-AnsiEsc'
+" supposed file navigation helper for taskwiki
+Plugin 'majutsushi/tagbar'
 
 Plugin 'pseewald/vim-anyfold'
+
+Plugin 'tpope/vim-surround'
+
+Plugin 'ctrlpvim/ctrlp.vim'
+
+Plugin 'scrooloose/nerdcommenter'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
