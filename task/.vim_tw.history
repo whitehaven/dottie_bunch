@@ -1,0 +1,10 @@
+next		rc.report.next.columns:id,start.age,entry.age,depends,priority,project,tags,recur,scheduled.countdown,due.relative,until.countdown,description.count,urgency rc.defaultheight=0
+next		rc.report.next.columns:id,start.age,entry.age,depends,priority,project,tags,recur,scheduled.countdown,due.relative,until.countdown,description.truncated,urgency rc.defaultheight=0
+next		rc.report.next.columns:id,start.age,entry.age,depends,priority,project,tags,recur,scheduled.countdown,due.relative,until.countdown,description.oneline,urgency rc.defaultheight=0
+next		rc.report.next.columns:id,start.age,entry.age,depends,priority,project,tags,recur,scheduled.countdown,due.relative,until.countdown,description.desc,urgency rc.defaultheight=0
+next		rc.report.next.columns:id,start.age,entry.age,depends,priority,project,tags,recur,scheduled.countdown,due.relative,until.countdown,description,urgency rc.defaultheight=0
+next		rc.report.next.columns:id,start.age,entry.age,depends,priority,project,tags,recur,scheduled.countdown,due.relative,until.countdown,description.count,urgency rc.defaultheight=0
+next		rc.report.next.columns:id,start.age,entry.age,depends,priority,project,tags,recur,scheduled.countdown,due.relative,until.countdown,description.truncated,urgency rc.defaultheight=0
+next		rc.defaultheight=0
+next		rc.report.next.sort:tags+,urgency- rc.defaultheight=0
+next		rc.defaultheight=0
