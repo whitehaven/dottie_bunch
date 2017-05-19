@@ -1,0 +1,4 @@
+[user]
+	email = accrist@gmail.com
+[core]
+	excludesfile = /Users/accrist/.gitignore_global
