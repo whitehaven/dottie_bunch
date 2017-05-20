@@ -18,9 +18,9 @@ data.location=~/.task
 #include /usr/local/Cellar/task/2.5.1/share/doc/task/rc/no-color.theme
 
 # taskd settings
-taskd.certificate=/Users/accrist/.task/private.certificate.pem
-taskd.key=/Users/accrist/.task/private.key.pem
-taskd.ca=/Users/accrist/.task/ca.cert.pem
+taskd.certificate=/data/data/com.termux/files/home/.task/private.certificate.pem
+taskd.key=/data/data/com.termux/files/home/.task/private.key.pem
+taskd.ca=/data/data/com.termux/files/home/.task/ca.cert.pem
 taskd.server=taskwarrior.inthe.am:53589
 taskd.credentials=inthe_am/accrist/a503a6de-cd39-455b-b44b-ce5cee55591d
 taskd.trust=ignore hostname
@@ -40,4 +40,4 @@ report.in.columns = id,description
 report.in.description = inbox
 report.in.filter = status:pending limit:page (+in)
 report.in.labels = ID,Description
-context=home
+context=away
