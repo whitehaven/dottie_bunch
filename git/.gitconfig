@@ -1,4 +1,5 @@
 [user]
 	email = accrist@gmail.com
+	name = Alex Crist
 [core]
-	excludesfile = /Users/accrist/.gitignore_global
+	excludesfile = $HOME/.gitignore_global
