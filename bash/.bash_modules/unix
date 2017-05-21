@@ -112,6 +112,9 @@ alias tref='task sync; clear; task ready;'
 # ultra-fast inbox, auto-adds tag on the way in
 alias in='task add +in'
 
+# Trigger vim-taskwarrior
+alias tvim='vim +T
+
 # find packages updated by pip instad of conda
 alias ac-updated_with_pip="conda list | grep pip | cut -d' ' -f1"
 
