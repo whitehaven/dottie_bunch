@@ -107,13 +107,13 @@ alias tcn='task context none'
 alias ta='task add '
 alias ts='task sync'
 
-alias tref='task sync; clear; task ready;'
+alias tref='task sync; clear; task next;'
 
 # ultra-fast inbox, auto-adds tag on the way in
 alias in='task add +in'
 
 # Trigger vim-taskwarrior
-alias tvim='vim +T
+alias tvim='task sync; vim +TW'
 
 # find packages updated by pip instad of conda
 alias ac-updated_with_pip="conda list | grep pip | cut -d' ' -f1"
