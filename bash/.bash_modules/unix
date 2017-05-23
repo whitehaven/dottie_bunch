@@ -9,29 +9,38 @@ function submerge()
 }
 
 export VISUAL="/usr/bin/vim"
+export EDITOR="/usr/bin/vim"
 
 # IP
 
+# TEST: working on Samsung S7E termux
 getExternalIP()
 {
 	wget -qO- http://ipecho.net/plain;
 	echo;
 }
-getLocalIP()
-{
-	ipconfig getifaddr en0;
-}
+
+# only works on macOS
+# TODO: find Linux/termux equivalent
+#getLocalIP()
+#{
+#	ipconfig getifaddr en0;
+#}
 
 # Is function because of quoting behavior - wouldn't fit into an alias right.
-function getGatewayIP
-{
-	route -n get default | grep gateway: | awk '{gsub("    gateway: ","");print}';
-}
+# only works on macOS
+# TODO: find Linux/termux equivalent
+#function getGatewayIP
+#{
+#	route -n get default | grep gateway: | awk '{gsub("    gateway: ","");print}';
+#}
 
-function getMACAddress
-{
-	ifconfig en0 | grep ether | awk '{gsub("\tether ","");print}';
-}
+# only works on macOS
+# TODO: find Linux/termux equivalent
+#function getMACAddress
+#{
+#	ifconfig en0 | grep ether | awk '{gsub("\tether ","");print}';
+#}
 
 # Auto-restart download
 alias wget='wget -c'
@@ -57,10 +66,16 @@ alias lp='ll | less'       #  Page through less
 alias lr='ll -R'           #  Recursive ls.
 alias la='ls -AlhF'
 alias ld="ls -ldF"
+
 alias c='clear'
+
 alias x='exit'
-alias mkdir='mkdir -pv'
+alias q='exit'
+
 alias h='history'
+
+# make mkdir do nested mkdir operations, like mkdir /new_folder/{junk, barf}/{bin, src}
+alias mkdir='mkdir -pv'
 
 # make directory and jump in
 function mcd
