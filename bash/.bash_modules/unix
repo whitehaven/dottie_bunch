@@ -95,6 +95,7 @@ alias bc='bc -l'
 # Use colored diff
 alias diff='colordiff'
 
+# TODO: change so that if .taskrc gets messed up, it doesn't hijack and destory the terminal
 # prompt that shows taskwarrior context (and reminds to set context by just showing t:context when none selected)
 export PS1="\w [t:\$(task context show | cut -d' ' -f2 | tr -d \"'\")=\$(task +PENDING count)|in=\$(task +in +PENDING count)] -> "
 
@@ -114,7 +115,3 @@ alias in='task add +in'
 
 # Trigger vim-taskwarrior
 alias tvim='task sync; vim +TW'
-
-# find packages updated by pip instad of conda
-alias ac-updated_with_pip="conda list | grep pip | cut -d' ' -f1"
-
