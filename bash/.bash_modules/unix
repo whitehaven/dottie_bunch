@@ -115,3 +115,4 @@ alias in='task add +in'
 # find packages updated by pip instad of conda
 alias ac-updated_with_pip="conda list | grep pip | cut -d' ' -f1"
 
+export TERM='xterm-256color'
