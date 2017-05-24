@@ -35,6 +35,9 @@ context.home=-work
 context.away=-work -home
 context.mtg=-work -home -in_town
 
+# not sure if this is good, will try
+urgency.inherit=on
+
 # inbox report
 report.in.columns = id,description
 report.in.description = inbox
