@@ -51,6 +51,9 @@ Plugin 'scrooloose/nerdcommenter'
 call vundle#end()            " required
 filetype plugin indent on    " required
 
+" better leader key
+let mapleader = ","
+
 " per anyfold docs:
 let anyfold_activate=1
 set foldlevel=0
