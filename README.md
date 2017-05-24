@@ -1,5 +1,5 @@
 # dottie_bunch
-"I'm .dottie Bunch. I'm the king-maker." -Frisky Dingo. 
+"I'm .dottie Bunch. I'm the king-maker." -Frisky Dingo.
 
 My dotfiles. My idea right now is to back up only ones that I'm getting used to; a lot of the tools I use I'm not sure about.
 
