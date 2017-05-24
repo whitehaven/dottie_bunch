@@ -101,7 +101,7 @@ export PS1="\u@\h \w [t:\$(task context show | cut -d' ' -f2 | tr -d \"'\")=\$(t
 # taskwarrior shortcuts
 alias t='task '
 alias tn='task next'
-alias trd='task ready'
+alias ty='task ready'
 alias tc='task context '
 alias tcn='task context none'
 alias ta='task add '
