@@ -62,6 +62,8 @@ Plugin 'Valloric/ListToggle' " easily toggle the quickfix and location-list
 Plugin 'scrooloose/nerdcommenter' " <,c> toggle comments
 Plugin 'ludovicchabant/vim-gutentags' " A Vim plugin that manages your tag files
 
+Plugin 'vimwiki/vimwiki'
+
 "Plugin 'Rip-Rip/clang_complete'
 "Plugin 'nvie/vim-flake8'
 "Plugin 'davidhalter/jedi-vim'
@@ -201,6 +203,8 @@ autocmd InsertLeave * match BadWhitespace /\t\|\s\+$/
 " vim-markdown
 let g:vim_markdown_math = 1
 let g:vim_markdown_folding_disabled = 1
+set conceallevel=2
+
 
 " ignore these files in the wildmenu
 set wildignore+=*_build/*
