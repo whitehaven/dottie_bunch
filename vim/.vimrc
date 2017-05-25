@@ -213,7 +213,7 @@ set wildignore+=*~
 set wildignore+=*.a,*.o,*.so,*.obj,*.pyc
 set wildignore+=*.jpg,*.jpeg,*.png,*.pdf
 set wildignore+=*.git,*.swp,*.swo
-set wildignore+=.git,.hg,.svn " TODO: fugitive fails with Gdiff when enabled?
+set wildignore+=.git,.hg,.svn "
 
 " sudo fix: force sudo write with w!!
 cmap w!! w !sudo tee % >/dev/null
