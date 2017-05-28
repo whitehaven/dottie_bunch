@@ -64,6 +64,8 @@ Plugin 'ludovicchabant/vim-gutentags' " A Vim plugin that manages your tag files
 
 Plugin 'vimwiki/vimwiki'
 
+Plugin 'BlindFS/vim-taskwarrior'
+
 "Plugin 'Rip-Rip/clang_complete'
 "Plugin 'nvie/vim-flake8'
 "Plugin 'davidhalter/jedi-vim'
