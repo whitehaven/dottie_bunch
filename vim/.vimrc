@@ -477,6 +477,8 @@ endfunction
 command! -bar RangerChooser call RangeChooser()
 nnoremap <leader>r :<C-U>RangerChooser<CR>
 
+let g:vimwiki_list = [{'path': '~/ac_wiki/', 'syntax': 'markdown', 'ext': '.md'}]
+
 " ======================================================================
 " below: stuff that need to be arranged/checked/deleted
 
