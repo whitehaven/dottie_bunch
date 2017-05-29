@@ -54,13 +54,15 @@ Plugin 'plasticboy/vim-markdown'
 
 " Code
 Plugin 'scrooloose/syntastic' " syntax checker
-Plugin 'majutsushi/tagbar' " tags window tree (F8) (definitions/function/etc.)
 " Plugin 'Valloric/YouCompleteMe' " code completion engine for C-family/Python/etc.
 "                                " https://github.com/Valloric/YouCompleteMe#installation
 Plugin 'rdnetto/YCM-Generator' " :YcmGenerateConfig to generate a config in current folder
 Plugin 'Valloric/ListToggle' " easily toggle the quickfix and location-list
 Plugin 'scrooloose/nerdcommenter' " <,c> toggle comments
-Plugin 'ludovicchabant/vim-gutentags' " A Vim plugin that manages your tag files
+
+" TODO: decide if tags are worth including
+" Plugin 'ludovicchabant/vim-gutentags' " A Vim plugin that manages your tag files
+" Plugin 'majutsushi/tagbar' " tags window tree (F8) (definitions/function/etc.)
 
 Plugin 'vimwiki/vimwiki'
 
