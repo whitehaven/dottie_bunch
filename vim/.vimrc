@@ -306,7 +306,9 @@ map <leader>gd :Gdiff<cr>
 " Disable formatting when pasting (usually large chunks of code)
 set pastetoggle=<F2>
 
-
+" Use <C-Up>/<C-Down> to swap lines
+map <C-k> dd<Up>P
+map <C-j> ddp
 
 " Workarounds
 " ===========
