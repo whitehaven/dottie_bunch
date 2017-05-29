@@ -5,7 +5,7 @@ fi
 
 function submerge()
 {
-	"$@" > /dev/null 2>&1 &
+  "$@" > /dev/null 2>&1 &
 }
 
 export VISUAL="/usr/bin/vim"
@@ -14,23 +14,23 @@ export VISUAL="/usr/bin/vim"
 
 getExternalIP()
 {
-	wget -qO- http://ipecho.net/plain;
-	echo;
+  wget -qO- http://ipecho.net/plain;
+  echo;
 }
 getLocalIP()
 {
-	ipconfig getifaddr en0;
+  ipconfig getifaddr en0;
 }
 
 # Is function because of quoting behavior - wouldn't fit into an alias right.
 function getGatewayIP
 {
-	route -n get default | grep gateway: | awk '{gsub("    gateway: ","");print}';
+  route -n get default | grep gateway: | awk '{gsub("    gateway: ","");print}';
 }
 
 function getMACAddress
 {
-	ifconfig en0 | grep ether | awk '{gsub("\tether ","");print}';
+  ifconfig en0 | grep ether | awk '{gsub("\tether ","");print}';
 }
 
 # Auto-restart download
@@ -59,13 +59,14 @@ alias la='ls -AlhF'
 alias ld="ls -ldF"
 alias c='clear'
 alias x='exit'
+alias q='exit'
 alias mkdir='mkdir -pv'
 alias h='history'
 
 # make directory and jump in
 function mcd
 {
-	mkdir $1 && cd $1;
+  mkdir $1 && cd $1;
 }
 
 # cd assist
@@ -96,7 +97,7 @@ alias bc='bc -l'
 alias diff='colordiff'
 
 # prompt that shows taskwarrior context (and reminds to set context by just showing t:context when none selected)
-export PS1="\u@\h \w [t:\$(task context show | cut -d' ' -f2 | tr -d \"'\")=\$(task +PENDING count)|in=\$(task +in +PENDING count)] -> "
+export PS1="\u:\w [t:\$(task context show | cut -d' ' -f2 | tr -d \"'\")=\$(task +PENDING count)|in=\$(task +in +PENDING count)] -> "
 
 # taskwarrior shortcuts
 alias t='task '
