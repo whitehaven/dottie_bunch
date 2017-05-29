@@ -1,1 +1,5 @@
 .DS_Store
+
+# don't store taskwarrior task data
+task/.task/*.data
+

@@ -54,15 +54,19 @@ Plugin 'plasticboy/vim-markdown'
 
 " Code
 Plugin 'scrooloose/syntastic' " syntax checker
-Plugin 'majutsushi/tagbar' " tags window tree (F8) (definitions/function/etc.)
 " Plugin 'Valloric/YouCompleteMe' " code completion engine for C-family/Python/etc.
 "                                " https://github.com/Valloric/YouCompleteMe#installation
 Plugin 'rdnetto/YCM-Generator' " :YcmGenerateConfig to generate a config in current folder
 Plugin 'Valloric/ListToggle' " easily toggle the quickfix and location-list
 Plugin 'scrooloose/nerdcommenter' " <,c> toggle comments
-Plugin 'ludovicchabant/vim-gutentags' " A Vim plugin that manages your tag files
+
+" TODO: decide if tags are worth including
+" Plugin 'ludovicchabant/vim-gutentags' " A Vim plugin that manages your tag files
+" Plugin 'majutsushi/tagbar' " tags window tree (F8) (definitions/function/etc.)
 
 Plugin 'vimwiki/vimwiki'
+
+Plugin 'BlindFS/vim-taskwarrior'
 
 "Plugin 'Rip-Rip/clang_complete'
 "Plugin 'nvie/vim-flake8'
@@ -472,6 +476,8 @@ function! RangeChooser()
 endfunction
 command! -bar RangerChooser call RangeChooser()
 nnoremap <leader>r :<C-U>RangerChooser<CR>
+
+let g:vimwiki_list = [{'path': '~/ac_wiki/', 'syntax': 'markdown', 'ext': '.md'}]
 
 " ======================================================================
 " below: stuff that need to be arranged/checked/deleted
