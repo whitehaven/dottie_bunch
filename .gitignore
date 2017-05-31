@@ -5,3 +5,6 @@ task/.task/*.data
 
 # don't store timewarrior data either
 timewarrior/.timewarrior/data/
+
+# nor vim-taskwarrior history
+task/.task/.vim_tw.history
