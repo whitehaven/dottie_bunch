@@ -26,6 +26,66 @@
   filelog = log -u
   fl = log -u
 
+  l = log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=short
+
+  a = add
+  ap = add -p
+  c = commit --verbose
+  ca = commit -a --verbose
+  cm = commit -m
+  cam = commit -a -m
+  m = commit --amend --verbose
+  d = diff
+  ds = diff --stat
+  dc = diff --cached
+
+  s = status -s
+  co = checkout
+  cob = checkout -b
+    # list branches sorted by last modified
+  b = "!git for-each-ref --sort='-authordate' --format='%(authordate)%09%(objectname:short)%09%(refname)' refs/heads | sed -e 's-refs/heads/--'"
+
+  # From https://gist.github.com/mwhite/6887990, each alias preceded by its author's comments:
+
+  # git init
+  # git rao https://url-here.git
+  # git ac "Message"
+  # git pushitgood
+  rao = remote add origin
+  ac = !git add . && git commit -am
+  pushitgood = push -u origin --all
+  push-dominate = push -u origin --all
+
+  # branch delete: This checks out your local master branch and deletes all local branches
+  #                that have already been merged to master
+  brd = !sh -c \"git checkout master && git branch --merged | grep -v '\\*' | xargs -n 1 git branch -d\"
+
+  # branch delete here: Deletes all local branches that have already been merged to the branch
+  #                     that you're currently on
+  brdhere = !sh -c \"git branch --merged | grep -v '\\*' | xargs -n 1 git branch -d\"
+
+  # diff status: A git diff, but with only the filenames (which reminds me of git status)
+  diffst = diff --name-only
+
+  # forced pull: You have a local branch (e.g. for reviewing), but someone else did a forced push
+  #              update on the remote branch. A regular git pull will fail, but this will just set
+  #              the local branch to match the remote branch. BEWARE: this will overwrite any local
+  #              commits you have made on this branch that haven't been pushed.
+  pullf = !sh -c \"git reset --hard origin/$(git rev-parse --abbrev-ref HEAD)\"
+
+  # quick amend: Amend my staged changes to the last commit, keeping the same commit message
+  amend = commit --amend -C HEAD
+
+  # history: This is pretty much the only way I look at my log. Aside from providing one-line logs,
+  #          it also shows the branching in/out
+  hist = log --pretty=format:'%h %ad | %s%d [%an]' --graph --date=short
+
+  # This one is also usefule to run merge test before merge to check for any conflicts.
+  mergetest = "!f(){ git merge --no-commit --no-ff \"$1\"; git merge --abort; echo \"Merge aborted\"; };f "
+
+  # simple but really efficient to minimize the size of a diff. It uses color to inline the differences.
+  wdiff = diff --word-diff
+
 [diff]
   tool = vimdiff
 
