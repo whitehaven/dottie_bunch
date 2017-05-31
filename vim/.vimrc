@@ -510,3 +510,4 @@ let g:vimwiki_list = [{'path': '~/ac_wiki/', 'syntax': 'markdown', 'ext': '.md'}
 " because the settings are not reset, I prefer to disable it until I find a better approach
 "autocmd! bufwritepost .vimrc source %
 "
+let g:task_rc_override = 'rc.defaultwidth=0'
