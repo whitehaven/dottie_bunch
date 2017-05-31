@@ -3,3 +3,5 @@
 # don't store taskwarrior task data
 task/.task/*.data
 
+# don't store timewarrior data either
+timewarrior/.timewarrior/data/
