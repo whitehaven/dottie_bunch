@@ -1,4 +1,4 @@
 - Samsung S7E termux
   - `Linux localhost 3.18.31-11103114 #1 SMP PREEMPT Tue Apr 11 17:46:19 KST 2017 aarch64 Android`
-
-
+- Linode server - Ubuntu 17
+  - `Linux chronos 4.9.15-x86_64-linode81 #1 SMP Fri Mar 17 09:47:36 EDT 2017 x86_64 x86_64 x86_64 GNU/Linux`
