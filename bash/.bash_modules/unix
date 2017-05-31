@@ -87,6 +87,9 @@ alias fgrep='fgrep --color=auto'
 alias cp='cp -iv'
 alias mv='mv -iv'
 
+alias gs='git status'
+alias glg='git lg'
+
 alias nowTime='nowdate +"%T'
 alias nowDate='date +"%d-%m-%Y"'
 alias Timestamp='date "+%F|%T"'
