@@ -98,7 +98,7 @@ alias Timestamp='date "+%F|%T"'
 alias diff='colordiff'
 
 # prompt that shows taskwarrior context (and reminds to set context by just showing t:context when none selected)
-export PS1="\u:\w [t:\$(task context show | cut -d' ' -f2 | tr -d \"'\")=\$(task +PENDING count)|in=\$(task +in +PENDING count)] -> "
+export PS1="\w [t:\$(task context show | cut -d' ' -f2 | tr -d \"'\")=\$(task +PENDING count)|in=\$(task +in +PENDING count)] -> "
 
 # taskwarrior shortcuts
 alias t='task '
