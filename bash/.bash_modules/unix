@@ -87,20 +87,26 @@ alias fgrep='fgrep --color=auto'
 alias cp='cp -iv'
 alias mv='mv -iv'
 
-alias gs='git status'
-alias glg='git lg'
-
-alias nowTime='nowdate +"%T'
-alias nowDate='date +"%d-%m-%Y"'
-alias Timestamp='date "+%F|%T"'
-
 alias rp='realpath'
 
 # Use colored diff
 alias diff='colordiff'
 
-# prompt that shows taskwarrior context (and reminds to set context by just showing t:context when none selected)
-export PS1="\w [t:\$(task context show | cut -d' ' -f2 | tr -d \"'\")=\$(task +PENDING count)|in=\$(task +in +PENDING count)] -> "
+alias nowTime='nowdate +"%T'
+alias nowDate='date +"%d-%m-%Y"'
+alias Timestamp='date "+%F|%T"'
+
+alias gs='git status'
+alias glg='git lg'
+
+parse_git_branch()
+{
+  git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
+}
+
+# (parse_git_branch): show git branch when in repo
+# (task*): taskwarrior context and count (shows t: context when none selected)
+export PS1="\w [t:\$(task context show | cut -d' ' -f2 | tr -d \"'\")=\$(task +PENDING count)|in=\$(task +in +PENDING count)]\$(parse_git_branch) -> "
 
 # taskwarrior shortcuts
 alias t='task '
