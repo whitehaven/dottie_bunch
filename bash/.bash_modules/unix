@@ -44,19 +44,14 @@ alias wget='wget -c'
 # See http://www.shellperson.net/using-sudo-with-an-alias/
 alias sudo='sudo '
 
-# Shortcuts
-#-------------------------------------------------------------
-# The 'ls' family (this assumes you use a recent GNU ls).
-#-------------------------------------------------------------
-# Add colors for filetype and  human-readable sizes by default on 'ls':
-
-# The ubiquitous 'll': directories first, with alphanumeric sorting:
+# requires recent GNU ls
+alias ls='ls -F --color=auto'
 alias l='ls'
-alias ls='ls -F'
 alias ll='ls -lhF'
 alias lp='ll | less'       #  Page through less
 alias lr='ll -R'           #  Recursive ls.
 alias la='ls -AlhF'
+alias lh='ls -AF'
 alias ld="ls -ldF"
 alias c='clear'
 alias x='exit'
