@@ -19,12 +19,8 @@ call vundle#begin()
 Plugin 'gmarik/Vundle.vim' " let Vundle manage itself
 
 " color schemes
-Plugin 'vim-scripts/wombat256.vim'
+Plugin 'rafi/awesome-vim-colorschemes'
 Plugin 'altercation/vim-colors-solarized'
-Plugin 'rainux/vim-desert-warm-256'
-Plugin 'nanotech/jellybeans.vim'
-Plugin 'tomasr/molokai'
-Plugin 'jacoborus/tender'
 
 " Filesystem
 Plugin 'scrooloose/nerdtree' " filesystem explore (F12)
@@ -44,22 +40,19 @@ Plugin 'tpope/vim-fugitive' " :G* git commands
 Plugin 'airblade/vim-gitgutter' " show git diff signs in the gutter column
 
 " Visuals
-"Plugin 'powerline/powerline'
 Plugin 'bling/vim-airline'
-"Plugin 'itchyny/lightline.vim' " A light and configurable statusline/tabline
 
 " Markdown
 Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
+Plugin 'pseewald/vim-anyfold'
 
-" Code
+" Code editing
 Plugin 'scrooloose/syntastic' " syntax checker
-" Plugin 'Valloric/YouCompleteMe' " code completion engine for C-family/Python/etc.
-"                                " https://github.com/Valloric/YouCompleteMe#installation
-Plugin 'rdnetto/YCM-Generator' " :YcmGenerateConfig to generate a config in current folder
 Plugin 'Valloric/ListToggle' " easily toggle the quickfix and location-list
 Plugin 'scrooloose/nerdcommenter' " <,c> toggle comments
 
+" Tags
 " TODO: decide if tags are worth including
 " Plugin 'ludovicchabant/vim-gutentags' " A Vim plugin that manages your tag files
 " Plugin 'majutsushi/tagbar' " tags window tree (F8) (definitions/function/etc.)
@@ -68,10 +61,17 @@ Plugin 'vimwiki/vimwiki'
 
 Plugin 'BlindFS/vim-taskwarrior'
 
+" General language tools
+" Plugin 'Valloric/YouCompleteMe' " code completion engine for C-family/Python/etc.
+"                                " https://github.com/Valloric/YouCompleteMe#installation
+" Plugin 'rdnetto/YCM-Generator' " :YcmGenerateConfig to generate a config in current folder
+
+" C language-specific
 "Plugin 'Rip-Rip/clang_complete'
+
+" Python language-specific
 "Plugin 'nvie/vim-flake8'
 "Plugin 'davidhalter/jedi-vim'
-"Plugin 'ervandew/supertab'
 
 call vundle#end()
 
@@ -128,15 +128,11 @@ endif
 autocmd ColorScheme * highlight BadWhitespace ctermbg=red guibg=red
 
 " color scheme
-"set guicolors
 set t_Co=256
-colorscheme molokai
-" let g:molokai_original=1 " original background, disable for darker
 let g:rehash256=1 " better colors for 256-color terminals
+set background=dark
+colorscheme solarized
 
-"wombat256mod
-"colorscheme jellybeans
-"set background=dark
 syntax on
 
 " column margin line & cursor line
@@ -147,9 +143,6 @@ set cursorline
 " show line numbers
 set number
 set relativenumber
-
-" intelligent c-style comments
-set comments=sl:/*,mb:\ *,elx:\ */
 
 " No annoying sound on errors
 set noerrorbells
@@ -357,9 +350,7 @@ endif
 " =========
 set laststatus=2 " always show the statusline
 set noshowmode " don't show '-- INSERT --' too
-let g:lightline = {
-      \ 'colorscheme': 'wombat',
-      \ }
+let g:lightline = {'colorscheme': 'solarized dark'}
 
 " syntastic
 " =========
