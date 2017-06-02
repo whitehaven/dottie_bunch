@@ -1,10 +1,16 @@
-
 # Set up bash completion
 if [ -f $(brew --prefix)/etc/bash_completion ]; then
 . $(brew --prefix)/etc/bash_completion
 fi
 
-export EDITOR="/usr/local/bin/mate -w"
+alias ls='gls -F --color=auto'
+alias ll='gls -lhF'
+alias lp='ll | less'
+alias lr='ll -R'
+alias la='gls -AlhF'
+alias lh='gls -AF'
+alias ld="gls -ldF"
+
 
 # go to open dir in macOS Finder.app
 cdf()

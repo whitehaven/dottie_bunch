@@ -45,14 +45,6 @@ alias wget='wget -c'
 alias sudo='sudo '
 
 # requires recent GNU ls
-alias ls='ls -F --color=auto'
-alias l='ls'
-alias ll='ls -lhF'
-alias lp='ll | less'       #  Page through less
-alias lr='ll -R'           #  Recursive ls.
-alias la='ls -AlhF'
-alias lh='ls -AF'
-alias ld="ls -ldF"
 alias c='clear'
 alias x='exit'
 alias q='exit'

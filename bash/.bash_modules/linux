@@ -1,0 +1,8 @@
+alias ls='ls -F --color=auto'
+alias l='ls'
+alias ll='ls -lhF'
+alias lp='ll | less'
+alias lr='ll -R'
+alias la='ls -AlhF'
+alias lh='ls -AF'
+alias ld="ls -ldF"
