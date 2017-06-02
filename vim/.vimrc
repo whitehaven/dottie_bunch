@@ -167,7 +167,11 @@ set scrolloff=5 " always show 4 lines at the edge when moving the cursor
 set sidescrolloff=7 " always show 7 columns at the edge when moving the cursor
 set sidescroll=1 " for fast terminals
 set magic " for regular expressions
-set clipboard=unnamed " make yank copy to the global system clipboard (works?)
+
+if $TMUX == ''
+    set clipboard+=unnamed
+endif
+
 set completeopt=longest,menuone " Improving code completion
 set splitbelow " split windows to the bottom (e.g, help)
 set splitright " split windows to the right
