@@ -44,19 +44,14 @@ alias wget='wget -c'
 # See http://www.shellperson.net/using-sudo-with-an-alias/
 alias sudo='sudo '
 
-# Shortcuts
-#-------------------------------------------------------------
-# The 'ls' family (this assumes you use a recent GNU ls).
-#-------------------------------------------------------------
-# Add colors for filetype and  human-readable sizes by default on 'ls':
-
-# The ubiquitous 'll': directories first, with alphanumeric sorting:
+# requires recent GNU ls
+alias ls='ls -F --color=auto'
 alias l='ls'
-alias ls='ls -F'
 alias ll='ls -lhF'
 alias lp='ll | less'       #  Page through less
 alias lr='ll -R'           #  Recursive ls.
 alias la='ls -AlhF'
+alias lh='ls -AF'
 alias ld="ls -ldF"
 alias c='clear'
 alias x='exit'
@@ -87,18 +82,26 @@ alias fgrep='fgrep --color=auto'
 alias cp='cp -iv'
 alias mv='mv -iv'
 
-alias nowTime='nowdate +"%T'
-alias nowDate='date +"%d-%m-%Y"'
-alias Timestamp='date "+%F|%T"'
-
-#Start calculator with floating-point math support
-alias bc='bc -l'
+alias rp='realpath'
 
 # Use colored diff
 alias diff='colordiff'
 
-# prompt that shows taskwarrior context (and reminds to set context by just showing t:context when none selected)
-export PS1="\u:\w [t:\$(task context show | cut -d' ' -f2 | tr -d \"'\")=\$(task +PENDING count)|in=\$(task +in +PENDING count)] -> "
+alias nowTime='nowdate +"%T'
+alias nowDate='date +"%d-%m-%Y"'
+alias Timestamp='date "+%F|%T"'
+
+alias gs='git status'
+alias glg='git lg'
+
+parse_git_branch()
+{
+  git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
+}
+
+# (parse_git_branch): show git branch when in repo
+# (task*): taskwarrior context and count (shows t: context when none selected)
+export PS1="\w [t:\$(task context show | cut -d' ' -f2 | tr -d \"'\")=\$(task +PENDING count)|in=\$(task +in +PENDING count)]\$(parse_git_branch) -> "
 
 # taskwarrior shortcuts
 alias t='task '
@@ -118,5 +121,3 @@ alias in='task add +in'
 alias ac-updated_with_pip="conda list | grep pip | cut -d' ' -f1"
 
 export TERM='xterm-256color'
-
-set -o vi
