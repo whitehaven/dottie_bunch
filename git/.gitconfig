@@ -39,7 +39,8 @@
   ds = diff --stat
   dc = diff --cached
 
-  s = status -s
+  s = status
+  ss = status -s
   co = checkout
   cob = checkout -b
     # list branches sorted by last modified
@@ -53,8 +54,9 @@
   # git pushitgood
   rao = remote add origin
   ac = !git add . && git commit -am
-  push-dominate = push -u origin --all
-  push-annihilate = push -u origin --all --force
+  push-set-upstream = push -u origin
+  push-all = push -u origin --all
+  push-dominate = push -u origin --all --force
 
   # branch delete: This checks out your local master branch and deletes all local branches
   #                that have already been merged to master
