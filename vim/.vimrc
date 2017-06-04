@@ -30,9 +30,9 @@ Plugin 'kien/ctrlp.vim' " file/buffer fuzzy finder (Ctrl+F)
 " Utilities
 Plugin 'Townk/vim-autoclose' " autocomplete open-close pairs, e.g: () {} <> []
 "Plugin 'vim-scripts/YankRing.vim' " access to yanked buffer (F3)
-Plugin 'ervandew/supertab' " <Tab> everything! (YCM handles tabs?)
+Plugin 'ervandew/supertab' " <Tab> everything!
 "Plugin 'mhinz/vim-startify' " a start screen for vim!
-Plugin 'Lokaltog/vim-easymotion' " Quickly jump to another place (,,w)
+Plugin 'easymotion/vim-easymotion' " quick move with ,,(movement)
 Plugin 'jeetsukumaran/vim-buffergator' " list & navigate buffers (,b)
 
 " Git
@@ -52,6 +52,8 @@ Plugin 'scrooloose/syntastic' " syntax checker
 Plugin 'Valloric/ListToggle' " easily toggle the quickfix and location-list
 Plugin 'scrooloose/nerdcommenter' " <,c> toggle comments
 Plugin 'tpope/vim-surround'
+Plugin 'nathanaelkane/vim-indent-guides' "TODO: Learn this
+Plugin 'terryma/vim-multiple-cursors' "TODO: learn this
 
 " Tags
 " TODO: decide if tags are worth including
@@ -73,6 +75,8 @@ Plugin 'BlindFS/vim-taskwarrior'
 " Python language-specific
 "Plugin 'nvie/vim-flake8'
 Plugin 'davidhalter/jedi-vim'
+
+" TODO: look at snippet inserter
 
 call vundle#end()
 
