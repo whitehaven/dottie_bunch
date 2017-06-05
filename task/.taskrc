@@ -24,3 +24,16 @@ report.in.columns = id,description
 report.in.description = inbox
 report.in.filter = status:pending limit:page (+in)
 report.in.labels = ID,Description
+
+# deferral field - drops urgency - takes name of deferral target
+uda.dfd.type = string
+uda.dfd.label = Def
+urgency.uda.dfd.coefficient = -15.0
+color.uda.dfd=on rgb440
+
+# - add deferral to next report
+report.next.columns=id,start.age,entry.age,depends,priority,project,tags,dfd,recur,scheduled.countdown,due.relative,until.remaining,description,urgency
+report.next.description=Most urgent tasks
+report.next.filter=status:pending limit:page
+report.next.labels=ID,Active,Age,Deps,P,Project,Tag,DfdTo,Recur,S,Due,Until,Description,Urg
+report.next.sort=urgency-
