@@ -37,3 +37,5 @@ report.next.description=Most urgent tasks
 report.next.filter=status:pending limit:page
 report.next.labels=ID,Active,Age,Deps,P,Project,Tag,DfdTo,Recur,S,Due,Until,Description,Urg
 report.next.sort=urgency-
+rc.defaultwidth=0
+journal.info=off
