@@ -60,8 +60,6 @@ Plugin 'terryma/vim-multiple-cursors' "TODO: learn this
 " Plugin 'ludovicchabant/vim-gutentags' " A Vim plugin that manages your tag files
 " Plugin 'majutsushi/tagbar' " tags window tree (F8) (definitions/function/etc.)
 
-Plugin 'vimwiki/vimwiki'
-
 Plugin 'BlindFS/vim-taskwarrior'
 
 " General language tools
