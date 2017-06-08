@@ -45,9 +45,9 @@ Plugin 'bling/vim-airline'
 " Markdown
 Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
-Plugin 'pseewald/vim-anyfold'
 
 " Code editing
+Plugin 'pseewald/vim-anyfold'
 Plugin 'scrooloose/syntastic' " syntax checker
 Plugin 'Valloric/ListToggle' " easily toggle the quickfix and location-list
 Plugin 'scrooloose/nerdcommenter' " <,c> toggle comments
