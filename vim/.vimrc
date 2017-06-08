@@ -44,8 +44,9 @@ Plugin 'bling/vim-airline'
 
 " Markdown
 Plugin 'godlygeek/tabular'
-Plugin 'plasticboy/vim-markdown'
 Plugin 'pseewald/vim-anyfold'
+Plugin 'vim-pandoc/vim-pandoc'
+Plugin 'vim-pandoc/vim-pandoc-syntax'
 
 " Code editing
 Plugin 'scrooloose/syntastic' " syntax checker
