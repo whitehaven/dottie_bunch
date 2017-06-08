@@ -162,7 +162,7 @@ set autoread " reload file when changes happen in other editors
 set mouse=a " enable mouse support
 set bs=indent,eol,start " make backspace behave like normal again
 set lazyredraw " do not refresh screen while executing macros
-set scrolloff=5 " always show 4 lines at the edge when moving the cursor
+set scrolloff=7 " always show 7 lines at the edge when moving the cursor
 set sidescrolloff=7 " always show 7 columns at the edge when moving the cursor
 set sidescroll=1 " for fast terminals
 set magic " for regular expressions
