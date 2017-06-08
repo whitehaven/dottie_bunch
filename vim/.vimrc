@@ -60,8 +60,6 @@ Plugin 'terryma/vim-multiple-cursors' "TODO: learn this
 " Plugin 'ludovicchabant/vim-gutentags' " A Vim plugin that manages your tag files
 " Plugin 'majutsushi/tagbar' " tags window tree (F8) (definitions/function/etc.)
 
-Plugin 'vimwiki/vimwiki'
-
 Plugin 'BlindFS/vim-taskwarrior'
 
 " General language tools
@@ -479,35 +477,5 @@ endfunction
 command! -bar RangerChooser call RangeChooser()
 nnoremap <leader>r :<C-U>RangerChooser<CR>
 
-let g:vimwiki_list = [{'path': '~/ac_wiki/', 'syntax': 'markdown', 'ext': '.md'}]
-
-" ======================================================================
-" below: stuff that need to be arranged/checked/deleted
-
-" Windows like copy/paste shortcuts (CTRL+X/C/V, etc.) - disabled
-"vnoremap <C-X> "+x
-"vnoremap <S-Del> "+x
-"vnoremap <C-C> "+y
-"vnoremap <C-Insert> "+y
-"map <C-V> "+gP
-"map <S-Insert> "+gP
-"cmap <C-V> <C-R>+
-"cmap <S-Insert> <C-R>+
-"noremap <C-Q> <C-V> " Use CTRL-Q to do what CTRL-V used to do
-
-" easier formatting of paragraphs
-"vmap Q gq
-"nmap Q gqap
-
-" Fixing the copy & paste madness
-" ================================
-"vmap <C-y> y:call system("xclip -i -selection clipboard", getreg("\""))<CR>:call system("xclip -i", getreg("\""))<CR>
-"nmap <C-v> :call setreg("\"",system("xclip -o -selection clipboard"))<CR>p
-"imap <C-v> <Esc><C-v>a
-
-" ======================================================================
-" reload .vimrc when it changed
-" because the settings are not reset, I prefer to disable it until I find a better approach
-"autocmd! bufwritepost .vimrc source %
-"
+" vim-taskwarrior settings
 let g:task_rc_override = 'rc.defaultwidth=0'
