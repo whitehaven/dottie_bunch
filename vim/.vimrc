@@ -94,9 +94,6 @@ set encoding=utf-8
 " Use unix as the standard file type
 set fileformats=unix,dos
 
-" Disable swap files - they trigger too many events for file system watchers
-" Enable backup - better safe than sorry. Rolled every minute.
-
 " use indentation from the previous line
 set autoindent
 
@@ -267,12 +264,6 @@ noremap <silent> > <c-w>>
 " faster command entering -now save/close/etc. will be faster
 nnoremap ; :
 
-" force myself to get used to h/j/k/l
-"map <up> <nop>
-"map <down> <nop>
-"map <left> <nop>
-"map <right> <nop>
-
 " Quick save
 "noremap <silent> <leader>s <Esc>:update<CR>
 " Quick quit
@@ -412,42 +403,37 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTree
 " starts nerdtree if no files specified when vim opened (disabled)
 "autocmd vimenter * if !argc() | NERDTree | endif
 
-" clang_complete
-" ==============
-let g:clang_complete_auto=1 " automatically complete after ->, ., ::
-let g:clang_complete_copen=0 " open quickfix window on error.
-let g:clang_hl_errors=1 " highlight the warnings and errors the same way clang does it.
-let g:clang_periodic_quickfix=0 " periodically update the quickfix window. - disabled (clears the make output)
-let g:clang_snippets=1 " do some snippets magic after a ( or a , inside function call. Not currently fully working.
-let g:clang_snippets_engine="clang_complete" " The snippets engine (clang_complete, snipmate, ultisnips... see the snippets subdirectory).
-let g:clang_conceal_snippets=1 " clang_complete will use vim 7.3 conceal feature to hide <# and #> which delimit snippet placeholders.
-let g:clang_close_preview=1 " the preview window will be close automatically after a completion.
-let g:clang_exec="/usr/bin/clang++" " Name or path of clang executable.
-let g:clang_user_options="" " Add this value at the end of the clang command
-let g:clang_auto_user_options="path, .clang_complete" " use path for include dirs, use .clang_complete for extra settings
-let g:clang_use_library=1 " Use libclang directly
-let g:clang_library_path="" " The path to libclang.so
-let g:clang_complete_macros=0 " If clang should complete preprocessor macros and constants.
-let g:clang_complete_patterns=0 " If clang should complete code patterns, i.e loop constructs etc.
-" Update and show the quickfix window
-nnoremap <F9> :call g:ClangUpdateQuickFix()<CR>:copen<CR>
+"  " clang_complete
+"  " ==============
+"  let g:clang_complete_auto=1 " automatically complete after ->, ., ::
+"  let g:clang_complete_copen=0 " open quickfix window on error.
+"  let g:clang_hl_errors=1 " highlight the warnings and errors the same way clang does it.
+"  let g:clang_periodic_quickfix=0 " periodically update the quickfix window. - disabled (clears the make output)
+"  let g:clang_snippets=1 " do some snippets magic after a ( or a , inside function call. Not currently fully working.
+"  let g:clang_snippets_engine="clang_complete" " The snippets engine (clang_complete, snipmate, ultisnips... see the snippets subdirectory).
+"  let g:clang_conceal_snippets=1 " clang_complete will use vim 7.3 conceal feature to hide <# and #> which delimit snippet placeholders.
+"  let g:clang_close_preview=1 " the preview window will be close automatically after a completion.
+"  let g:clang_exec="/usr/bin/clang++" " Name or path of clang executable.
+"  let g:clang_user_options="" " Add this value at the end of the clang command
+"  let g:clang_auto_user_options="path, .clang_complete" " use path for include dirs, use .clang_complete for extra settings
+"  let g:clang_use_library=1 " Use libclang directly
+"  let g:clang_library_path="" " The path to libclang.so
+"  let g:clang_complete_macros=0 " If clang should complete preprocessor macros and constants.
+"  let g:clang_complete_patterns=0 " If clang should complete code patterns, i.e loop constructs etc.
+"  " Update and show the quickfix window
+"  nnoremap <F9> :call g:ClangUpdateQuickFix()<CR>:copen<CR>
 
-" tagbar
-" ======
-let g:tagbar_autoshowtag=1 " unfold as needed to show a tag
-" Open a tagbar window that closes when jumped from
-nmap <F8> :TagbarOpenAutoClose<cr>
-" Open/Close the tagbar window (but leave it open when jumped from)
-nmap <S-F8> :TagbarToggle<cr>
+"  " tagbar
+"  " ======
+"  let g:tagbar_autoshowtag=1 " unfold as needed to show a tag
+"  " Open a tagbar window that closes when jumped from
+"  nmap <F8> :TagbarOpenAutoClose<cr>
+"  " Open/Close the tagbar window (but leave it open when jumped from)
+"  nmap <S-F8> :TagbarToggle<cr>
 
 " autoclose
 " =========
 let g:AutoClosePreserveDotReg=0 " fix a bug (movement keys in insert mode write random text)
-
-" YankRink
-" ========
-"map <F3> :YRShow<cr>
-"imap <F3> <C-O>:YRShow<cr>
 
 function! RangeChooser()
     let temp = tempname()
