@@ -167,6 +167,7 @@ set sidescrolloff=7 " always show 7 columns at the edge when moving the cursor
 set sidescroll=1 " for fast terminals
 set magic " for regular expressions
 
+" fixes clipboard issues on Android-Termux
 if $TMUX == ''
     set clipboard+=unnamed
 endif
