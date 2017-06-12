@@ -22,6 +22,9 @@ context.mtg=-work -home -in_town
 # force 1-line description formatting (also helps with vim-TW display)
 rc.defaultwidth=0
 
+# stop display of history - very cluttered, especially with inthe.am's messing about
+journal.info=off
+
 # inbox report
 report.in.columns = id,description
 report.in.description = inbox
@@ -40,7 +43,6 @@ report.next.description=Most urgent tasks
 report.next.filter=status:pending limit:page
 report.next.labels=ID,Active,Age,Deps,P,Project,Tag,DfdTo,Recur,S,Due,Until,Description,Urg
 report.next.sort=urgency-
-journal.info=off
 
 # modify ready report
 report.ready.columns=id,start.age,entry.age,depends.indicator,priority,project,tags,recur.indicator,scheduled.relative,due.relative,until.remaining,description.count,urgency
