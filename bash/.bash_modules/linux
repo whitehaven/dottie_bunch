@@ -6,3 +6,5 @@ alias lr='ll -R'
 alias la='ls -AlhF'
 alias lh='ls -AF'
 alias ld="ls -ldF"
+
+export TZ='America/Denver'

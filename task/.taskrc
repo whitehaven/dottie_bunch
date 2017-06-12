@@ -19,8 +19,34 @@ context.home=-work
 context.away=-work -home
 context.mtg=-work -home -in_town
 
+# force 1-line description formatting (also helps with vim-TW display)
+rc.defaultwidth=0
+
+# stop display of history - very cluttered, especially with inthe.am's messing about
+journal.info=off
+
 # inbox report
 report.in.columns = id,description
 report.in.description = inbox
 report.in.filter = status:pending limit:page (+in)
 report.in.labels = ID,Description
+
+# deferral field - drops urgency - takes name of deferral target
+uda.dfd.type = string
+uda.dfd.label = Def
+urgency.uda.dfd.coefficient = -15.0
+color.uda.dfd=underline
+
+# - add deferral to next report
+report.next.columns=id,start.age,entry.age,depends,priority,project,tags,dfd,recur,scheduled.relative,due.relative,until.remaining,description.count,urgency
+report.next.description=Most urgent tasks
+report.next.filter=status:pending limit:page
+report.next.labels=ID,Active,Age,Deps,P,Project,Tag,DfdTo,Recur,S,Due,Until,Description,Urg
+report.next.sort=urgency-
+
+# modify ready report
+report.ready.columns=id,start.age,entry.age,depends.indicator,priority,project,tags,recur.indicator,scheduled.relative,due.relative,until.remaining,description.count,urgency
+report.ready.description=Most urgent actionable tasks
+report.ready.filter=+READY limit:page
+report.ready.labels=ID,Active,Age,D,P,Project,Tags,R,S,Due,Until,Description,Urg
+report.ready.sort=start-,urgency-

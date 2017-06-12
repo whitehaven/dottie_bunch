@@ -7,9 +7,9 @@
 
 [alias]
   # list all aliases
-  la = "!git config -l | grep alias | cut -c 7-"
+  la  = "!git config -l | grep alias | cut -c 7-"
   # from https://stackoverflow.com/questions/1838873/visualizing-branch-topology-in-git/34467298#34467298 - visualizing git graphs
-  lg = !"git lg1"
+  lg  = !"git lg1"
   lg1 = !"git lg1-specific --all"
   lg2 = !"git lg2-specific --all"
   lg3 = !"git lg3-specific --all"
@@ -19,28 +19,29 @@
   lg3-specific = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset) %C(bold cyan)(committed: %cD)%C(reset) %C(auto)%d%C(reset)%n''          %C(white)%s%C(reset)%n''          %C(dim white)- %an <%ae> %C(reset) %C(dim white)(committer: %cn <%ce>)%C(reset)'
 
   # more nice formats
-  ls = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate
-  ll = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat
+  l  = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=short
+  ll = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat --date=short
 
   # gets commits and diffs for a specified tree or blob
   filelog = log -u
-  fl = log -u
+  fl      = log -u
 
-  l = log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=short
+  a   = add
+  ap  = add -p
 
-  a = add
-  ap = add -p
-  c = commit --verbose
-  ca = commit -a --verbose
-  cm = commit -m
+  c   = commit --verbose
+  ca  = commit -a --verbose
+  cm  = commit -m
   cam = commit -a -m
-  m = commit --amend --verbose
-  d = diff
-  ds = diff --stat
-  dc = diff --cached
+  m   = commit --amend --verbose
 
-  s = status -s
-  co = checkout
+  d   = diff
+  ds  = diff --stat
+  dc  = diff --cached
+
+  s   = status
+  ss  = status -s
+  co  = checkout
   cob = checkout -b
     # list branches sorted by last modified
   b = "!git for-each-ref --sort='-authordate' --format='%(authordate)%09%(objectname:short)%09%(refname)' refs/heads | sed -e 's-refs/heads/--'"
@@ -51,10 +52,11 @@
   # git rao https://url-here.git
   # git ac "Message"
   # git pushitgood
-  rao = remote add origin
-  ac = !git add . && git commit -am
-  push-dominate = push -u origin --all
-  push-annihilate = push -u origin --all --force
+  rao               = remote add origin
+  ac                = !git add . && git commit -am
+  push-set-upstream = push -u origin
+  push-all          = push -u origin --all
+  push-dominate     = push -u origin --all --force
 
   # branch delete: This checks out your local master branch and deletes all local branches
   #                that have already been merged to master
