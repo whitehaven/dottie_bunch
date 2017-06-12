@@ -32,7 +32,7 @@ urgency.uda.dfd.coefficient = -15.0
 color.uda.dfd=underline
 
 # - add deferral to next report
-report.next.columns=id,start.age,entry.age,depends,priority,project,tags,dfd,recur,scheduled.relative,due.relative,until.remaining,description,urgency
+report.next.columns=id,start.age,entry.age,depends,priority,project,tags,dfd,recur,scheduled.relative,due.relative,until.remaining,description.count,urgency
 report.next.description=Most urgent tasks
 report.next.filter=status:pending limit:page
 report.next.labels=ID,Active,Age,Deps,P,Project,Tag,DfdTo,Recur,S,Due,Until,Description,Urg
