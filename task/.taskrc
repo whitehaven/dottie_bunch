@@ -39,3 +39,10 @@ report.next.labels=ID,Active,Age,Deps,P,Project,Tag,DfdTo,Recur,S,Due,Until,Desc
 report.next.sort=urgency-
 rc.defaultwidth=0
 journal.info=off
+
+# modify ready report
+report.ready.columns=id,start.age,entry.age,depends.indicator,priority,project,tags,recur.indicator,scheduled.relative,due.relative,until.remaining,description.count,urgency
+report.ready.description=Most urgent actionable tasks
+report.ready.filter=+READY limit:page
+report.ready.labels=ID,Active,Age,D,P,Project,Tags,R,S,Due,Until,Description,Urg
+report.ready.sort=start-,urgency-
