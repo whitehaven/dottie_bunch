@@ -19,6 +19,9 @@ context.home=-work
 context.away=-work -home
 context.mtg=-work -home -in_town
 
+# force 1-line description formatting (also helps with vim-TW display)
+rc.defaultwidth=0
+
 # inbox report
 report.in.columns = id,description
 report.in.description = inbox
@@ -37,7 +40,6 @@ report.next.description=Most urgent tasks
 report.next.filter=status:pending limit:page
 report.next.labels=ID,Active,Age,Deps,P,Project,Tag,DfdTo,Recur,S,Due,Until,Description,Urg
 report.next.sort=urgency-
-rc.defaultwidth=0
 journal.info=off
 
 # modify ready report
