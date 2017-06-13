@@ -37,17 +37,17 @@ uda.dfd.label = Def
 urgency.uda.dfd.coefficient = -15.0
 color.uda.dfd=underline
 
-# - add deferral to next report
+# next report - preferred settings (add UDA dfd)
 report.next.columns=id,start.age,entry.age,depends,priority,project,tags,dfd,recur,scheduled.relative,due.relative,until.remaining,description.count,urgency
 report.next.description=Most urgent tasks
 report.next.filter=status:pending limit:page
 report.next.labels=ID,Active,Age,Deps,P,Project,Tag,DfdTo,Recur,S,Due,Until,Description,Urg
 report.next.sort=urgency-
 
-# ready report - preferred settings
+# ready report - preferred settings (add UDA dfd, filter out deferred tasks)
 report.ready.columns=id,start.age,entry.age,depends.indicator,priority,project,tags,dfd,recur.indicator,scheduled.relative,due.relative,until.remaining,description.count,urgency
 report.ready.description=Most urgent actionable tasks
-report.ready.filter=+READY limit:page
+report.ready.filter=+READY limit:page dfd.none:
 report.ready.labels=ID,Active,Age,D,P,Project,Tags,DfdTo,R,S,Due,Until,Description,Urg
 report.ready.sort=start-,urgency-
 
