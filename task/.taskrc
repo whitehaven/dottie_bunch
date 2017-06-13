@@ -50,3 +50,10 @@ report.ready.description=Most urgent actionable tasks
 report.ready.filter=+READY limit:page
 report.ready.labels=ID,Active,Age,D,P,Project,Tags,DfdTo,R,S,Due,Until,Description,Urg
 report.ready.sort=start-,urgency-
+
+# deferred (my UDA, 'dfd') report
+report.deferred.columns=id,dfd,scheduled.relative,due.relative,until.remaining,description
+report.deferred.description=Show deferred tasks
+report.deferred.filter=status:pending limit:page dfd.any:
+report.deferred.labels=ID,DfdTo,S,Due,Until,Description
+report.deferred.sort=dfd+/
