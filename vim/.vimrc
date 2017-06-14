@@ -53,8 +53,9 @@ Plugin 'scrooloose/syntastic' " syntax checker
 Plugin 'Valloric/ListToggle' " easily toggle the quickfix and location-list
 Plugin 'scrooloose/nerdcommenter' " <,c> toggle comments
 Plugin 'tpope/vim-surround'
-Plugin 'nathanaelkane/vim-indent-guides' "TODO: Learn this
+Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'terryma/vim-multiple-cursors' "TODO: learn this
+Plugin 'ntpeters/vim-better-whitespace'
 
 " Tags
 " TODO: decide if tags are worth including
@@ -106,6 +107,10 @@ set shiftround
 set expandtab " Use spaces instead of tabs
 set smarttab " smarter tabs
 
+" color scheme for vim-indent-guides
+let g:indent_guides_guide_size = 1
+
+
 " maximum width of inserted text (80 is too small for modern displays)
 set textwidth=100
 
@@ -124,9 +129,6 @@ if has("gui_running")
         set guifont=Monospace\ 9
     endif
 endif
-
-" highlight group for wrong whitespace, must appear before the colorscheme
-autocmd ColorScheme * highlight BadWhitespace ctermbg=red guibg=red
 
 " color scheme
 set t_Co=256
@@ -199,9 +201,6 @@ set smartcase " ignore ignorecase if the search contains uppercase characters
 " auto-format settings
 set formatoptions-=t " don't automatically wrap text when typing
 set formatoptions+=j " when joining lines, smartly join their comments leader
-
-" highlight bad whitespace matching rules (when leaving insert mode)
-autocmd InsertLeave * match BadWhitespace /\t\|\s\+$/
 
 " vim-markdown
 let g:vim_markdown_math = 1
