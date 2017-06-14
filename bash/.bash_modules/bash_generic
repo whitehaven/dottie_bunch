@@ -5,10 +5,6 @@ fi
 
 export TERM='xterm-256color'
 
-function submerge()
-{
-  "$@" > /dev/null 2>&1 &
-}
 
 export VISUAL=$( which vim )
 export EDITOR=$( which vim )
@@ -93,6 +89,26 @@ parse_git_branch()
 # (parse_git_branch): show git branch when in repo
 # (task*): taskwarrior context and count (shows t: context when none selected)
 export PS1="\w [t:\$(task context show | cut -d' ' -f2 | tr -d \"'\")=\$(task +PENDING count)|in=\$(task +in +PENDING count)]\$(parse_git_branch) -> "
+
+# background fork
+fns() #fire-and-submerge
+{
+  "$@" > /dev/null 2>&1 &
+}
+
+# tmux auto-detatch forks
+# quotes needed in command too
+
+fnf() #fire-and-forget
+{
+  tmux new-window -d "$@"
+}
+
+fnr() #fire-and-[read|remember]
+{
+  tmux new-window -d "$@; read"
+}
+
 
 # taskwarrior shortcuts
 alias t='task '
