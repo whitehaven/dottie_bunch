@@ -401,7 +401,7 @@ map <leader>nf :NERDTreeFind<cr>
 map <silent> <F12> :NERDTreeToggle<cr>
 map <silent> <S-F12> :NERDTreeFind<cr>
 " closes vim if the only buffer left is nerdtree
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+" autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 
 "  " clang_complete
 "  " ==============
