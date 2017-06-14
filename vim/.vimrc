@@ -53,7 +53,7 @@ Plugin 'scrooloose/syntastic' " syntax checker
 Plugin 'Valloric/ListToggle' " easily toggle the quickfix and location-list
 Plugin 'scrooloose/nerdcommenter' " <,c> toggle comments
 Plugin 'tpope/vim-surround'
-Plugin 'nathanaelkane/vim-indent-guides' "TODO: Learn this
+Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'terryma/vim-multiple-cursors' "TODO: learn this
 Plugin 'ntpeters/vim-better-whitespace'
 
@@ -106,6 +106,10 @@ set shiftwidth=2
 set shiftround
 set expandtab " Use spaces instead of tabs
 set smarttab " smarter tabs
+
+" color scheme for vim-indent-guides
+let g:indent_guides_guide_size = 1
+
 
 " maximum width of inserted text (80 is too small for modern displays)
 set textwidth=100
