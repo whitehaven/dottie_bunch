@@ -54,7 +54,6 @@ Plugin 'Valloric/ListToggle' " easily toggle the quickfix and location-list
 Plugin 'scrooloose/nerdcommenter' " <,c> toggle comments
 Plugin 'tpope/vim-surround'
 Plugin 'nathanaelkane/vim-indent-guides'
-Plugin 'terryma/vim-multiple-cursors' "TODO: learn this
 Plugin 'ntpeters/vim-better-whitespace'
 
 " Tags
