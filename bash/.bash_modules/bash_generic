@@ -119,8 +119,6 @@ alias tcn='task context none'
 alias ta='task add '
 alias ts='task sync'
 
-alias tf='task sync; clear; task next;'
-
 # ultra-fast inbox, auto-adds tag on the way in
 alias in='task add +in'
 
