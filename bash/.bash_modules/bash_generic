@@ -26,12 +26,12 @@ getLocalIP()
 }
 
 # Is function because of quoting behavior - wouldn't fit into an alias right.
-function getGatewayIP
+getGatewayIP()
 {
   route -n get default | grep gateway: | awk '{gsub("    gateway: ","");print}';
 }
 
-function getMACAddress
+getMACAddress()
 {
   ifconfig en0 | grep ether | awk '{gsub("\tether ","");print}';
 }
@@ -55,7 +55,7 @@ alias mkdir='mkdir -pv'
 alias h='history'
 
 # make directory and jump in
-function mcd
+mcd()
 {
   mkdir $1 && cd $1;
 }
@@ -76,7 +76,6 @@ alias fgrep='fgrep --color=auto'
 
 alias rp='realpath'
 
-# Use colored diff
 alias diff='colordiff'
 
 alias nowTime='nowdate +"%T'
