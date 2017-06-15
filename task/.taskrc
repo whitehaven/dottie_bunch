@@ -2,58 +2,62 @@
 data.location=~/.task
 
 # taskd settings
-taskd.certificate=~/.task/private.certificate.pem
-taskd.key=~/.task/private.key.pem
-taskd.ca=~/.task/ca.cert.pem
-taskd.server=taskwarrior.inthe.am:53589
-taskd.credentials=inthe_am/accrist/a503a6de-cd39-455b-b44b-ce5cee55591d
-taskd.trust=ignore hostname
-uda.reviewed.type=date
-uda.reviewed.label=Reviewed
-report._reviewed.description=Tasksh review report.  Adjust the filter to your needs.
-report._reviewed.columns=uuid
-report._reviewed.sort=reviewed+,modified+
-report._reviewed.filter=( reviewed.none: or reviewed.before:now-1week ) and ( +PENDING or +WAITING )
-context.work=-home
-context.home=-work
-context.away=-work -home
-context.mtg=-work -home -out
+taskd.certificate = ~/.task/private.certificate.pem
+taskd.key         = ~/.task/private.key.pem
+taskd.ca          = ~/.task/ca.cert.pem
+taskd.server      = taskwarrior.inthe.am:53589
+taskd.credentials = inthe_am/accrist/a503a6de-cd39-455b-b44b-ce5cee55591d
+taskd.trust       = ignore hostname
+
+#tasksh review settings
+uda.reviewed.type            = date
+uda.reviewed.label           = Reviewed
+report._reviewed.description = Tasksh review report.  Adjust the filter to your needs.
+report._reviewed.columns     = uuid
+report._reviewed.sort        = reviewed+,modified+
+report._reviewed.filter      = ( reviewed.none: or reviewed.before:now-1week ) and ( +PENDING or +WAITING )
+
+# contexts
+context.work = -home
+context.home = -work
+context.away = -work -home
+context.mtg  = -work -home -out
 
 # force 1-line description formatting (also helps with vim-TW display)
-rc.defaultwidth=0
+rc.defaultwidth = 0
 
 # stop display of history - very cluttered, especially with inthe.am's messing about
-journal.info=off
+journal.info = off
 
 # inbox report
-report.in.columns = id,description
+report.in.columns     = id,description
 report.in.description = inbox
-report.in.filter = status:pending limit:page (+in)
-report.in.labels = ID,Description
+report.in.filter      = status:pending limit:page (+in)
+report.in.labels      = ID,Description
 
 # deferral field - drops urgency - takes name of deferral target
-uda.dfd.type = string
-uda.dfd.label = Def
+uda.dfd.type                = string
+uda.dfd.label               = Def
 urgency.uda.dfd.coefficient = -15.0
-color.uda.dfd=underline
+color.uda.dfd               = underline
 
 # next report - preferred settings (add UDA dfd)
-report.next.columns=id,start.age,entry.age,depends,priority,project,tags,dfd,recur,scheduled.relative,due.relative,until.remaining,description.count,urgency
-report.next.description=Most urgent tasks
-report.next.filter=status:pending limit:page
-report.next.labels=ID,Active,Age,Deps,P,Project,Tag,DfdTo,Recur,S,Due,Until,Description,Urg
-report.next.sort=urgency-
+report.next.columns     = id,start.age,entry.age,depends,priority,project,tags,dfd,recur,scheduled.relative,due.relative,until.remaining,description.count,urgency
+report.next.description = Most urgent tasks
+report.next.filter      = status:pending limit:page
+report.next.labels      = ID,Active,Age,Deps,P,Project,Tag,DfdTo,Recur,S,Due,Until,Description,Urg
+report.next.sort        = urgency-
 
 # ready report - preferred settings (add UDA dfd, filter out deferred tasks)
-report.ready.columns=id,start.age,entry.age,depends.indicator,priority,project,tags,dfd,recur.indicator,scheduled.relative,due.relative,until.remaining,description.count,urgency
-report.ready.description=Most urgent actionable tasks
-report.ready.filter=+READY limit:page dfd.none:
-report.ready.labels=ID,Active,Age,D,P,Project,Tags,DfdTo,R,S,Due,Until,Description,Urg
-report.ready.sort=start-,urgency-
+report.ready.columns     = id,start.age,entry.age,depends.indicator,priority,project,tags,dfd,recur.indicator,scheduled.relative,due.relative,until.remaining,description.count,urgency
+report.ready.description = Most urgent actionable tasks
+report.ready.filter      = +READY limit:page dfd.none:
+report.ready.labels      = ID,Active,Age,D,P,Project,Tags,DfdTo,R,S,Due,Until,Description,Urg
+report.ready.sort        = start-,urgency-
 
 # deferred (my UDA, 'dfd') report
-report.deferred.columns=id,dfd,scheduled.relative,due.relative,until.remaining,description
-report.deferred.description=Show deferred tasks
-report.deferred.filter=status:pending limit:page dfd.any:
-report.deferred.labels=ID,DfdTo,S,Due,Until,Description
-report.deferred.sort=dfd+/
+report.deferred.columns     = id,status,dfd,scheduled.relative,due.relative,until.remaining,description
+report.deferred.description = Show deferred tasks
+report.deferred.filter      = (status:pending or status:waiting) and dfd.any:
+report.deferred.labels      = ID,Status,DfdTo,Sch,Due,Until,Description
+report.deferred.sort        = status+,dfd+/,urgency-
