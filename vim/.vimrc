@@ -282,8 +282,6 @@ nnoremap j gj
 nnoremap k gk
 " Select all
 map <leader>a ggVG
-" remove all end-of-line whitespaces
-map <silent> <leader>w :%s/\s\+$//<cr>
 " replace all tabs with spaces
 map <leader><tab> :retab<cr>
 " Git shortcuts (assuming available git aliases)
