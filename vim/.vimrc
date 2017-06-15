@@ -157,7 +157,8 @@ set history=2000
 set undolevels=2000
 
 " general settings
-let mapleader="," " set <leader> to ,
+inoremap jk <ESC>
+let mapleader="\<Space>" " set <leader> to <Space>
 set wildmenu " turn on wild menu
 set wildmode=longest:full " TAB acts nicely (auto-complete and show the wildmenu)
 set autoread " reload file when changes happen in other editors
@@ -261,13 +262,6 @@ noremap <silent> > <c-w>>
 
 " Mappings - various shortcuts
 " ============================
-" faster command entering -now save/close/etc. will be faster
-nnoremap ; :
-
-" Quick save
-"noremap <silent> <leader>s <Esc>:update<CR>
-" Quick quit
-"noremap <silent> <leader>q <Esc>:quit<CR>
 " Spell-checking toggle
 map <leader>sp :setlocal spell!<cr>
 " Disable highlight with <leader><cr>
