@@ -118,8 +118,9 @@ alias tc='task context '
 alias tcn='task context none'
 alias ta='task add '
 alias ts='task sync'
+alias tsf='tmux neww -d "task sync"'
 
-# ultra-fast inbox, auto-adds tag on the way in
+# ultra-fast inbox, auto-adds in tag on the way in - see .taskrc for inbox report
 alias in='task add +in'
 
 # find packages updated by pip instad of conda
