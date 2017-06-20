@@ -17,6 +17,14 @@ report._reviewed.columns     = uuid
 report._reviewed.sort        = reviewed+,modified+
 report._reviewed.filter      = ( reviewed.none: or reviewed.before:now-1week ) and ( +PENDING or +WAITING )
 
+# priorities = High, Medium, Low, (none), Unimportant, Someday/maybe
+uda.priority.values                = H,M,L,,U,S
+urgency.uda.priority.H.coefficient = 6.0
+urgency.uda.priority.M.coefficient = 3.9
+urgency.uda.priority.L.coefficient = 1.8
+urgency.uda.priority.U.coefficient = -4.0
+urgency.uda.priority.S.coefficient = -8.0
+
 # contexts
 context.work = -home
 context.home = -work
