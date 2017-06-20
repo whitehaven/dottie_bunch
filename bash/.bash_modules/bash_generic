@@ -88,7 +88,7 @@ parse_git_branch()
 
 # (parse_git_branch): show git branch when in repo
 # (task*): taskwarrior context and count (shows t: context when none selected)
-export PS1="\w [t:\$(task context show | cut -d' ' -f2 | tr -d \"'\")=\$(task +PENDING count)|in=\$(task +in +PENDING count)]\$(parse_git_branch) -> "
+export PS1="\w\$(parse_git_branch) -> "
 
 # background fork
 fns() #fire-and-submerge
