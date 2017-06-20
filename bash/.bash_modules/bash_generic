@@ -5,10 +5,6 @@ fi
 
 export TERM='xterm-256color'
 
-function submerge()
-{
-  "$@" > /dev/null 2>&1 &
-}
 
 export VISUAL=$( which vim )
 export EDITOR=$( which vim )
@@ -26,12 +22,12 @@ getLocalIP()
 }
 
 # Is function because of quoting behavior - wouldn't fit into an alias right.
-function getGatewayIP
+getGatewayIP()
 {
   route -n get default | grep gateway: | awk '{gsub("    gateway: ","");print}';
 }
 
-function getMACAddress
+getMACAddress()
 {
   ifconfig en0 | grep ether | awk '{gsub("\tether ","");print}';
 }
@@ -55,7 +51,7 @@ alias mkdir='mkdir -pv'
 alias h='history'
 
 # make directory and jump in
-function mcd
+mcd()
 {
   mkdir $1 && cd $1;
 }
@@ -76,7 +72,6 @@ alias fgrep='fgrep --color=auto'
 
 alias rp='realpath'
 
-# Use colored diff
 alias diff='colordiff'
 
 alias nowTime='nowdate +"%T'
@@ -93,7 +88,27 @@ parse_git_branch()
 
 # (parse_git_branch): show git branch when in repo
 # (task*): taskwarrior context and count (shows t: context when none selected)
-export PS1="\w [t:\$(task context show | cut -d' ' -f2 | tr -d \"'\")=\$(task +PENDING count)|in=\$(task +in +PENDING count)]\$(parse_git_branch) -> "
+export PS1="\w\$(parse_git_branch) -> "
+
+# background fork
+fns() #fire-and-submerge
+{
+  "$@" > /dev/null 2>&1 &
+}
+
+# tmux auto-detatch forks
+# quotes needed in command too
+
+fnf() #fire-and-forget
+{
+  tmux new-window -d "$@"
+}
+
+fnr() #fire-and-[read|remember]
+{
+  tmux new-window -d "$@; read"
+}
+
 
 # taskwarrior shortcuts
 alias t='task '
@@ -103,10 +118,9 @@ alias tc='task context '
 alias tcn='task context none'
 alias ta='task add '
 alias ts='task sync'
+alias tsf='tmux neww -d "task sync"'
 
-alias tf='task sync; clear; task next;'
-
-# ultra-fast inbox, auto-adds tag on the way in
+# ultra-fast inbox, auto-adds in tag on the way in - see .taskrc for inbox report
 alias in='task add +in'
 
 # find packages updated by pip instad of conda

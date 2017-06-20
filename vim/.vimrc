@@ -53,8 +53,8 @@ Plugin 'scrooloose/syntastic' " syntax checker
 Plugin 'Valloric/ListToggle' " easily toggle the quickfix and location-list
 Plugin 'scrooloose/nerdcommenter' " <,c> toggle comments
 Plugin 'tpope/vim-surround'
-Plugin 'nathanaelkane/vim-indent-guides' "TODO: Learn this
-Plugin 'terryma/vim-multiple-cursors' "TODO: learn this
+Plugin 'nathanaelkane/vim-indent-guides'
+Plugin 'ntpeters/vim-better-whitespace'
 
 " Tags
 " TODO: decide if tags are worth including
@@ -106,6 +106,10 @@ set shiftround
 set expandtab " Use spaces instead of tabs
 set smarttab " smarter tabs
 
+" color scheme for vim-indent-guides
+let g:indent_guides_guide_size = 1
+
+
 " maximum width of inserted text (80 is too small for modern displays)
 set textwidth=100
 
@@ -124,9 +128,6 @@ if has("gui_running")
         set guifont=Monospace\ 9
     endif
 endif
-
-" highlight group for wrong whitespace, must appear before the colorscheme
-autocmd ColorScheme * highlight BadWhitespace ctermbg=red guibg=red
 
 " color scheme
 set t_Co=256
@@ -156,7 +157,8 @@ set history=2000
 set undolevels=2000
 
 " general settings
-let mapleader="," " set <leader> to ,
+inoremap jk <ESC>
+let mapleader="\<Space>" " set <leader> to <Space>
 set wildmenu " turn on wild menu
 set wildmode=longest:full " TAB acts nicely (auto-complete and show the wildmenu)
 set autoread " reload file when changes happen in other editors
@@ -199,9 +201,6 @@ set smartcase " ignore ignorecase if the search contains uppercase characters
 " auto-format settings
 set formatoptions-=t " don't automatically wrap text when typing
 set formatoptions+=j " when joining lines, smartly join their comments leader
-
-" highlight bad whitespace matching rules (when leaving insert mode)
-autocmd InsertLeave * match BadWhitespace /\t\|\s\+$/
 
 " vim-markdown
 let g:vim_markdown_math = 1
@@ -263,13 +262,6 @@ noremap <silent> > <c-w>>
 
 " Mappings - various shortcuts
 " ============================
-" faster command entering -now save/close/etc. will be faster
-nnoremap ; :
-
-" Quick save
-"noremap <silent> <leader>s <Esc>:update<CR>
-" Quick quit
-"noremap <silent> <leader>q <Esc>:quit<CR>
 " Spell-checking toggle
 map <leader>sp :setlocal spell!<cr>
 " Disable highlight with <leader><cr>
@@ -284,8 +276,6 @@ nnoremap j gj
 nnoremap k gk
 " Select all
 map <leader>a ggVG
-" remove all end-of-line whitespaces
-map <silent> <leader>w :%s/\s\+$//<cr>
 " replace all tabs with spaces
 map <leader><tab> :retab<cr>
 " Git shortcuts (assuming available git aliases)
@@ -401,9 +391,7 @@ map <leader>nf :NERDTreeFind<cr>
 map <silent> <F12> :NERDTreeToggle<cr>
 map <silent> <S-F12> :NERDTreeFind<cr>
 " closes vim if the only buffer left is nerdtree
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
-" starts nerdtree if no files specified when vim opened (disabled)
-"autocmd vimenter * if !argc() | NERDTree | endif
+" autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 
 "  " clang_complete
 "  " ==============
