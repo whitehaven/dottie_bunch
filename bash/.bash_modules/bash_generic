@@ -1,44 +1,23 @@
+# ------------------------------------------------------------
+# Top-Level Configuration
+# ------------------------------------------------------------
+export TERM='xterm-256color'
+
+# TODO: see if using which like this is dangerous
+export VISUAL=$( which vim )
+export EDITOR=$( which vim )
+
+# ------------------------------------------------------------
+# Bash Completion
+# ------------------------------------------------------------
 # add git completion
 if [ -f ~/.git-completion.bash ]; then
 . ~/.git-completion.bash
 fi
 
-export TERM='xterm-256color'
-
-
-export VISUAL=$( which vim )
-export EDITOR=$( which vim )
-
-# IP
-
-getExternalIP()
-{
-  wget -qO- http://ipecho.net/plain;
-  echo;
-}
-getLocalIP()
-{
-  ipconfig getifaddr en0;
-}
-
-# Is function because of quoting behavior - wouldn't fit into an alias right.
-getGatewayIP()
-{
-  route -n get default | grep gateway: | awk '{gsub("    gateway: ","");print}';
-}
-
-getMACAddress()
-{
-  ifconfig en0 | grep ether | awk '{gsub("\tether ","");print}';
-}
-
-# Auto-restart download
-alias wget='wget -c'
-
-#   ---------------------------------------
-#   File Management
-#   ---------------------------------------
-
+# ------------------------------------------------------------
+# GNUtils
+# ------------------------------------------------------------
 # See http://www.shellperson.net/using-sudo-with-an-alias/
 alias sudo='sudo '
 
@@ -49,6 +28,10 @@ alias x='exit'
 alias q='exit'
 alias mkdir='mkdir -pv'
 alias h='history'
+
+alias rp='realpath'
+
+alias diff='colordiff'
 
 # make directory and jump in
 mcd()
@@ -65,31 +48,9 @@ alias .....='cd ../../../../'
 alias .4='cd ../../../../'
 alias .5='cd ../../../../../'
 
-## Colorize the grep command output for ease of use (good for log files)##
-alias grep='grep --color=auto'
-alias egrep='egrep --color=auto'
-alias fgrep='fgrep --color=auto'
-
-alias rp='realpath'
-
-alias diff='colordiff'
-
-alias nowTime='nowdate +"%T'
-alias nowDate='date +"%d-%m-%Y"'
-alias Timestamp='date "+%F|%T"'
-
-alias gs='git status'
-alias glg='git lg'
-
-parse_git_branch()
-{
-  git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
-}
-
-# (parse_git_branch): show git branch when in repo
-# (task*): taskwarrior context and count (shows t: context when none selected)
-export PS1="\w\$(parse_git_branch) -> "
-
+# ------------------------------------------------------------
+# Process Handling
+# ------------------------------------------------------------
 # background fork
 fns() #fire-and-submerge
 {
@@ -109,10 +70,67 @@ fnr() #fire-and-[read|remember]
   tmux new-window -d "$@; read"
 }
 
+# ------------------------------------------------------------
+# Misc. Application Aliases
+# ------------------------------------------------------------
+## Colorize the grep command output for ease of use (good for log files)##
+alias grep='grep --color=auto'
+alias egrep='egrep --color=auto'
+alias fgrep='fgrep --color=auto'
 
+alias nowTime='nowdate +"%T'
+alias nowDate='date +"%d-%m-%Y"'
+alias Timestamp='date "+%F|%T"'
+
+# ------------------------------------------------------------
+# Git
+# ------------------------------------------------------------
+alias gs='git status'
+alias glg='git lg'
+
+parse_git_branch()
+{
+  git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
+}
+
+# (parse_git_branch): show git branch when in repo
+# (task*): taskwarrior context and count (shows t: context when none selected)
+export PS1="\w\$(parse_git_branch) -> "
+
+# ------------------------------------------------------------
+# TCP/UDP Networking
+# ------------------------------------------------------------
+getExternalIP()
+{
+  wget -qO- http://ipecho.net/plain;
+  echo;
+}
+
+getLocalIP()
+{
+  ipconfig getifaddr en0;
+}
+
+getGatewayIP()
+{
+  route -n get default | grep gateway: | awk '{gsub("    gateway: ","");print}';
+}
+
+getMACAddress()
+{
+  ifconfig en0 | grep ether | awk '{gsub("\tether ","");print}';
+}
+
+# set wget to auto-restart downloads when failed
+alias wget='wget -c'
+
+# ------------------------------------------------------------
+# Taskwarrior Functionality
+# ------------------------------------------------------------
 # taskwarrior shortcuts
 alias t='task '
 alias tn='task next'
+alias tna='task limit: next'
 alias ty='task ready'
 alias tc='task context '
 alias tcn='task context none'
@@ -123,7 +141,13 @@ alias tsf='tmux neww -d "task sync"'
 # ultra-fast inbox, auto-adds in tag on the way in - see .taskrc for inbox report
 alias in='task add +in'
 
-# find packages updated by pip instad of conda
-alias ac-updated_with_pip="conda list | grep pip | cut -d' ' -f1"
-
+# ------------------------------------------------------------
+# SSH Directory
+# ------------------------------------------------------------
 alias drac='ssh accrist@dralexcrist.com'
+
+# ------------------------------------------------------------
+# Python Editing and Environment
+# ------------------------------------------------------------
+# find packages updated by pip instad of conda
+alias updated_by_pip="conda list | grep pip | cut -d' ' -f1"
