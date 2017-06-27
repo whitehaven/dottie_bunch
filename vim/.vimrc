@@ -36,6 +36,7 @@ Plugin 'ervandew/supertab' " <Tab> everything!
 "Plugin 'mhinz/vim-startify' " a start screen for vim!
 Plugin 'easymotion/vim-easymotion' " quick move with ,,(movement)
 Plugin 'jeetsukumaran/vim-buffergator' " list & navigate buffers (,b)
+Plugin 'christoomey/vim-sort-motion'
 
 " Git
 Plugin 'tpope/vim-fugitive' " :G* git commands
