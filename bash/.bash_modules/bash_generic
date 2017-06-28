@@ -14,6 +14,11 @@ export EDITOR=$( which vim )
 if [ -f ~/.git-completion.bash ]; then
 . ~/.git-completion.bash
 fi
+# ------------------------------------------------------------
+# gpg Settings
+# ------------------------------------------------------------
+# see `man gpg-agent`
+export GPG_TTY=$(tty)
 
 # ------------------------------------------------------------
 # GNUtils
