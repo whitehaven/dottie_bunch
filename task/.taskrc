@@ -9,7 +9,7 @@ taskd.server      = taskwarrior.inthe.am:53589
 taskd.credentials = inthe_am/accrist/a503a6de-cd39-455b-b44b-ce5cee55591d
 taskd.trust       = ignore hostname
 
-#tasksh review settings
+# tasksh review settings
 uda.reviewed.type            = date
 uda.reviewed.label           = Reviewed
 report._reviewed.description = Tasksh review report.  Adjust the filter to your needs.
@@ -17,7 +17,8 @@ report._reviewed.columns     = uuid
 report._reviewed.sort        = reviewed+,modified+
 report._reviewed.filter      = ( reviewed.none: or reviewed.before:now-1week ) and ( +PENDING or +WAITING )
 
-# priorities = High, Medium, Low, (none), Unimportant, Someday/maybe
+# priorities
+# - High, Medium, Low, (none), Unimportant, Someday/maybe
 uda.priority.values                = H,M,L,,U,S
 urgency.uda.priority.H.coefficient = 6.0
 urgency.uda.priority.M.coefficient = 3.9
@@ -25,45 +26,63 @@ urgency.uda.priority.L.coefficient = 1.8
 urgency.uda.priority.U.coefficient = -4.0
 urgency.uda.priority.S.coefficient = -8.0
 
-# contexts
+# context definitions
 context.work = -home
 context.home = -work
 context.away = -work -home
 context.mtg  = -work -home -out
 
-# force 1-line description formatting (also helps with vim-TW display)
+# display settings
+# - force columns to infinite width
+#   - helps vim-taskwarrior and tw reports display well on large screens
 rc.defaultwidth = 0
 
-# stop display of history - very cluttered, especially with inthe.am's messing about
+# `task information` settings
+# - stop display of history (cluttered, especially with inthe.am's messing about)
 journal.info = off
 
 # inbox report
+# - minimal report to encourage inbox processing
+# - requires +in tag
+#   - works best with shell alias, like:
+#     `alias in='task add +in '`
+#     You can then do
+#     `$ in consider breeder reactor for Jaeger Suit`
+#     and you get a task named 'consider breeder reactor for Jaeger Suit` with the +in tag
+# - best to also have an inbox report for processing; see below
 report.in.columns     = id,description
 report.in.description = inbox
 report.in.filter      = status:pending limit:page (+in)
 report.in.labels      = ID,Description
 
-# deferral field - drops urgency - takes name of deferral target
+# dfd UDA
+# - drops urgency
+# - stores name of deferral target for follow-up
 uda.dfd.type                = string
 uda.dfd.label               = Def
 urgency.uda.dfd.coefficient = -15.0
 color.uda.dfd               = underline
 
-# next report - preferred settings (add UDA dfd)
+# next report
+# - add UDA dfd
 report.next.columns     = id,start.age,entry.age,depends,priority,project,tags,dfd,recur,scheduled.relative,due.relative,until.remaining,description.count,urgency
 report.next.description = Most urgent tasks
 report.next.filter      = status:pending limit:page
 report.next.labels      = ID,Active,Age,Deps,P,Project,Tag,DfdTo,Recur,S,Due,Until,Description,Urg
 report.next.sort        = urgency-
 
-# ready report - preferred settings (add UDA dfd, filter out deferred tasks)
+# ready report
+# - filter out deferred tasks
+# - put started tasks at top, regardless of urgency
+# - limit to page
 report.ready.columns     = id,start.age,entry.age,depends.indicator,priority,project,tags,dfd,recur.indicator,scheduled.relative,due.relative,until.remaining,description.count,urgency
 report.ready.description = Most urgent actionable tasks
 report.ready.filter      = +READY limit:page dfd.none:
 report.ready.labels      = ID,Active,Age,D,P,Project,Tags,DfdTo,R,S,Due,Until,Description,Urg
 report.ready.sort        = start-,urgency-
 
-# deferred (my UDA, 'dfd') report
+# deferred report
+# - uses dfd UDA
 report.deferred.columns     = id,status,dfd,scheduled.relative,due.relative,until.remaining,description
 report.deferred.description = Show deferred tasks
 report.deferred.filter      = (status:pending or status:waiting) and dfd.any:
