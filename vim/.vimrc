@@ -29,11 +29,14 @@ Plugin 'kien/ctrlp.vim' " file/buffer fuzzy finder (Ctrl+F)
 
 " Utilities
 Plugin 'Townk/vim-autoclose' " autocomplete open-close pairs, e.g: () {} <> []
+"TODO: investigate YankRing
 "Plugin 'vim-scripts/YankRing.vim' " access to yanked buffer (F3)
 Plugin 'ervandew/supertab' " <Tab> everything!
+"TODO: investigate vim-startify
 "Plugin 'mhinz/vim-startify' " a start screen for vim!
 Plugin 'easymotion/vim-easymotion' " quick move with ,,(movement)
 Plugin 'jeetsukumaran/vim-buffergator' " list & navigate buffers (,b)
+Plugin 'christoomey/vim-sort-motion'
 
 " Git
 Plugin 'tpope/vim-fugitive' " :G* git commands
@@ -50,8 +53,10 @@ Plugin 'vim-pandoc/vim-pandoc-syntax'
 " Code editing
 Plugin 'pseewald/vim-anyfold'
 Plugin 'scrooloose/syntastic' " syntax checker
-Plugin 'Valloric/ListToggle' " easily toggle the quickfix and location-list
-Plugin 'scrooloose/nerdcommenter' " <,c> toggle comments
+"TODO: investigate ListToggle/quickfix/location-list
+"Plugin 'Valloric/ListToggle' " easily toggle the quickfix and location-list
+Plugin 'scrooloose/nerdcommenter'
+"TODO: learn to use vim-surrount
 Plugin 'tpope/vim-surround'
 Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'ntpeters/vim-better-whitespace'
@@ -109,9 +114,8 @@ set smarttab " smarter tabs
 " color scheme for vim-indent-guides
 let g:indent_guides_guide_size = 1
 
-
 " maximum width of inserted text (80 is too small for modern displays)
-set textwidth=100
+set textwidth=120
 
 " compact gvim UI
 if has("gui_running")
@@ -207,7 +211,6 @@ let g:vim_markdown_math = 1
 let g:vim_markdown_folding_disabled = 1
 set conceallevel=2
 
-
 " ignore these files in the wildmenu
 set wildignore+=*_build/*
 set wildignore+=*/coverage/*
@@ -262,22 +265,6 @@ noremap <silent> > <c-w>>
 
 " Mappings - various shortcuts
 " ============================
-" Spell-checking toggle
-map <leader>sp :setlocal spell!<cr>
-" Disable highlight with <leader><cr>
-map <silent> <leader><cr> :nohlsearch<cr>
-" CWD to the directory of the open buffer
-map <leader>cd :cd %:p:h<cr>:pwd<cr>
-" Indentation of selected text
-vnoremap < <gv
-vnoremap > >gv
-" Wrapped lines goes down/up to next row, rather than next line in file.
-nnoremap j gj
-nnoremap k gk
-" Select all
-map <leader>a ggVG
-" replace all tabs with spaces
-map <leader><tab> :retab<cr>
 " Git shortcuts (assuming available git aliases)
 map <leader>gf :Git fetch --all<cr>
 map <leader>gb :Git b<cr>
@@ -315,7 +302,7 @@ map <C-j> ddp
 "autocmd CursorMovedI * if pumvisible() == 0|pclose|endif
 "autocmd InsertLeave * if pumvisible() == 0|pclose|endif
 
-" tmux fix
+" tmux key fix
 if &term =~ '^screen'
     " tmux will send xterm-style keys when its xterm-keys option is on
     execute "set <xUp>=\e[1;*A"
@@ -360,7 +347,6 @@ let g:syntastic_mode_map = {
 
 " YouCompleteMe
 " =============
-
 " nnoremap <F5> :YcmForceCompileAndDiagnostics<CR>
 " let g:ycm_confirm_extra_conf = 0
 " let g:ycm_always_populate_location_list = 1
