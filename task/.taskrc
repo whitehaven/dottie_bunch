@@ -88,3 +88,11 @@ report.deferred.description = Show deferred tasks
 report.deferred.filter      = (status:pending or status:waiting) and dfd.any:
 report.deferred.labels      = ID,Status,DfdTo,Sch,Due,Until,Description
 report.deferred.sort        = status+,dfd+/,urgency-
+
+# task urgency inheritance
+# - tasks inherit urgency value of tasks depending on them unless their own is already greater
+# - tasks that are blocking other tasks have minimum urgency of 4
+#   (This is about the same as a standalone task being due in 2 weeks.)
+urgency.inherit              = on
+urgency.blocked.coefficient  = 0
+urgency.blocking.coefficient = 4
