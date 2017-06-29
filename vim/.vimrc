@@ -257,11 +257,6 @@ noremap <silent> <c-l> <c-w>l
 noremap <silent> <c-h> <c-w>h
 noremap <silent> <c-Up> <c-w><c-w>
 noremap <silent> <c-Down> <c-w><s-w>
-" Resize windows
-noremap <silent> + <c-w>+
-noremap <silent> _ <c-w>-
-noremap <silent> < <c-w><
-noremap <silent> > <c-w>>
 
 " Mappings - various shortcuts
 " ============================
