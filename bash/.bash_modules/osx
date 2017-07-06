@@ -1,8 +1,11 @@
-# Set up bash completion
+# macOS-specific utilities
+
+# set up bash completion for homebrew-installed packages
 if [ -f $(brew --prefix)/etc/bash_completion ]; then
 . $(brew --prefix)/etc/bash_completion
 fi
 
+# use GNUtils for ls, but don't jack up macOS's old-timey BSD version of ls
 alias ls='gls -F --color=auto'
 alias ll='gls -lhF'
 alias lp='ll | less'
@@ -30,14 +33,8 @@ cdf()
 	fi
 }
 
-
-# Emergency Shutdown
-alias pmset-shutdownnow='sudo /sbin/shutdown -h now'
-
-
-# Quicklook file
+# open file in macOS's "QuickLook" viewer
 ql () { qlmanage -p "$*" >& /dev/null; }
-
 
 # copy the working directory path
 alias cpwd='pwd|tr -d "\n"|pbcopy'
@@ -45,10 +42,8 @@ alias cpwd='pwd|tr -d "\n"|pbcopy'
 #copy output of last command to clipboard
 alias cl="fc -e -|pbcopy"
 
-
 # cleanupLS:  Clean up LaunchServices to remove duplicates in the "Open With" menu
 alias cleanupOpenWith="/System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -kill -r -domain local -domain system -domain user && killall Finder"
-
 
 # added by Anaconda3 4.3.1 installer
 export PATH="/Users/accrist/anaconda3/bin:$PATH"
