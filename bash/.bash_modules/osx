@@ -11,6 +11,11 @@ alias la='gls -AlhF'
 alias lh='gls -AF'
 alias ld="gls -ldF"
 
+# macOS-specific (weird) way to get Local IP
+getLocalIP()
+{
+  ipconfig getifaddr en0;
+}
 
 # go to open dir in macOS Finder.app
 cdf()

@@ -111,11 +111,6 @@ getExternalIP()
   echo;
 }
 
-getLocalIP()
-{
-  ipconfig getifaddr en0;
-}
-
 getGatewayIP()
 {
   route -n get default | grep gateway: | awk '{gsub("    gateway: ","");print}';
