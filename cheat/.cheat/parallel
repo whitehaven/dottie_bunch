@@ -1,3 +1,6 @@
+# show commands executed without executing
+  $ parallel --dry-run #<command>#
+
 # create cartesian product of commands :::(:)
 #   (:) uses lines in a file instead of prompt arguments
 
