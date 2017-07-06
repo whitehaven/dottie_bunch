@@ -96,3 +96,4 @@ report.deferred.sort        = status+,dfd+/,urgency-
 urgency.inherit              = on
 urgency.blocked.coefficient  = 0
 urgency.blocking.coefficient = 4
+rule.precedence.color=deleted,completed,active,keyword.,blocked,blocking,tag.,project.,overdue,scheduled,due.today,due,recurring,tagged,uda.
