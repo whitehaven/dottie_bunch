@@ -1,1 +1,3 @@
 *.pem filter=git-crypt diff=git-crypt
+ssh/.ssh/id_rsa filter=git-crypt diff=git-crypt
+ssh/.ssh/id_rsa.pub filter=git-crypt diff=git-crypt
