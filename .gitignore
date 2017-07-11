@@ -8,3 +8,5 @@ timewarrior/.timewarrior/data/
 
 # nor vim-taskwarrior history
 task/.task/.vim_tw.history
+ssh/.ssh/authorized_keys
+ssh/.ssh/known_hosts

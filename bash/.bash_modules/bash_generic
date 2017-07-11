@@ -83,23 +83,19 @@ alias grep='grep --color=auto'
 alias egrep='egrep --color=auto'
 alias fgrep='fgrep --color=auto'
 
-alias nowTime='nowdate +"%T'
-alias nowDate='date +"%d-%m-%Y"'
-alias Timestamp='date "+%F|%T"'
-
 # ------------------------------------------------------------
 # Git
 # ------------------------------------------------------------
 alias gs='git status'
-alias glg='git lg'
+alias gl='git lg'
 
+# used in prompt PS1
 parse_git_branch()
 {
   git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
 }
 
 # (parse_git_branch): show git branch when in repo
-# (task*): taskwarrior context and count (shows t: context when none selected)
 export PS1="\w\$(parse_git_branch) -> "
 
 # ------------------------------------------------------------
@@ -109,11 +105,6 @@ getExternalIP()
 {
   wget -qO- http://ipecho.net/plain;
   echo;
-}
-
-getLocalIP()
-{
-  ipconfig getifaddr en0;
 }
 
 getGatewayIP()

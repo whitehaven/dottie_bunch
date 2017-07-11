@@ -26,6 +26,16 @@ urgency.uda.priority.L.coefficient = 1.8
 urgency.uda.priority.U.coefficient = -4.0
 urgency.uda.priority.S.coefficient = -8.0
 
+# color options
+color.blocked         = color10
+color.blocking        = bold black on white
+
+color.uda.priority.H  = rgb520   # orange
+color.uda.priority.M  = color184 # yellow
+color.uda.priority.L  = rgb250   # green-yellow
+color.uda.priority.U  = magenta  # magenta
+color.uda.priority.S  = rgb215   # purple
+
 # context definitions
 context.work = -home
 context.home = -work
