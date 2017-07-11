@@ -1,0 +1,31 @@
+# create cartesian product of commands :::(:)
+#   (:) uses lines in a file instead of prompt arguments
+
+$ parallel echo ::: 0 1 ::: 0 1
+0 0
+0 1
+1 0
+1 1
+
+# run jobs in order, like a smarter xargs, forcing only one job at a time
+
+$ echo "drop\nthat\nbeat" > echoes.txt
+$ parallel -j1 echo :::: echoes.txt
+drop
+that
+beat
+
+
+# replacment strings
+
+$ parallel echo {} ::: /tmp
+/tmp
+
+$ parallel echo {/} ::: /tmp/stdio.h
+stdio.h
+
+$ parallel echo {//} ::: /tmp/stdio.h
+/tmp
+
+$ parallel echo {.} ::: /tmp/stdio.h
+/tmp/stdio
