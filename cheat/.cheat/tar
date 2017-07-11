@@ -28,6 +28,12 @@ tar -ztvf /path/to/foo.tgz
 # To list the content of an .bz2 archive:
 tar -jtvf /path/to/foo.tgz
 
+# Create an xz-compressed tar directory (v for verbose output)
+tar cJvf my_file
+
+# Unzip an xz-compressed tar directory
+tar xJvf my_file.tar.xz
+
 # To use parallel (multi-threaded) implementation of compression algorithms:
 tar -z ... -> tar -Ipigz ...
 tar -j ... -> tar -Ipbzip2 ...
