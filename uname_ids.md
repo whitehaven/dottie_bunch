@@ -1,6 +1,0 @@
-- Samsung S7E termux
-  - `Linux localhost 3.18.31-11103114 #1 SMP PREEMPT Tue Apr 11 17:46:19 KST 2017 aarch64 Android`
-- Linode server - Ubuntu 17
-  - `Linux chronos 4.9.15-x86_64-linode81 #1 SMP Fri Mar 17 09:47:36 EDT 2017 x86_64 x86_64 x86_64 GNU/Linux`
-- macOS 10.12.5
-  - `Darwin Resolute.local 16.6.0 Darwin Kernel Version 16.6.0: Fri Apr 14 16:21:16 PDT 2017; root:xnu-3789.60.24~6/RELEASE_X86_64 x86_64`
