@@ -74,10 +74,10 @@ Plugin 'ntpeters/vim-better-whitespace'
 Plugin 'BlindFS/vim-taskwarrior'
 
 " General language tools
-" Plugin 'Valloric/YouCompleteMe' " code completion engine for C-family/Python/etc.
+Plugin 'Valloric/YouCompleteMe' " code completion engine for C-family/Python/etc.
 "                                " https://github.com/Valloric/YouCompleteMe#installation
-" Plugin 'rdnetto/YCM-Generator' " :YcmGenerateConfig to generate a config in current folder
-
+Plugin 'rdnetto/YCM-Generator' " :YcmGenerateConfig to generate a config in current folder
+Plugin 'eagletmt/neco-ghc'
 " C language-specific
 "Plugin 'Rip-Rip/clang_complete'
 
@@ -86,6 +86,19 @@ Plugin 'BlindFS/vim-taskwarrior'
 Plugin 'davidhalter/jedi-vim'
 
 " TODO: look at snippet inserter
+" Track the engine.
+Plugin 'SirVer/ultisnips'
+
+" Snippets are separated from the engine. Add this if you want them:
+Plugin 'honza/vim-snippets'
+
+"" Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+
+" If you want :UltiSnipsEdit to split your window.
+let g:UltiSnipsEditSplit="vertical"
 
 call vundle#end()
 
@@ -378,6 +391,10 @@ map <silent> <F12> :NERDTreeToggle<cr>
 map <silent> <S-F12> :NERDTreeFind<cr>
 " closes vim if the only buffer left is nerdtree
 " autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+
+" neco_ghc Haskell autocomplete (usable with YouCompleteMe)
+let g:ycm_semantic_triggers={'haskell' : ['.']}
+let g:necoghc_enable_detailed_browse=1
 
 "  " clang_complete
 "  " ==============
