@@ -26,17 +26,22 @@ Plugin 'altercation/vim-colors-solarized'
 Plugin 'scrooloose/nerdtree' " filesystem explore (F12)
 Plugin 'Xuyuanp/nerdtree-git-plugin'
 Plugin 'kien/ctrlp.vim' " file/buffer fuzzy finder (Ctrl+F)
+Plugin 'Shougo/denite.nvim'
 
 " Utilities
 Plugin 'Townk/vim-autoclose' " autocomplete open-close pairs, e.g: () {} <> []
-"TODO: investigate YankRing
-"Plugin 'vim-scripts/YankRing.vim' " access to yanked buffer (F3)
+"TODO: investigate/replace YankRing.vim or resolve conflict with ctrlp
+Plugin 'svermeulen/vim-easyclip'
 Plugin 'ervandew/supertab' " <Tab> everything!
 "TODO: investigate vim-startify
 "Plugin 'mhinz/vim-startify' " a start screen for vim!
 Plugin 'easymotion/vim-easymotion' " quick move with ,,(movement)
 Plugin 'jeetsukumaran/vim-buffergator' " list & navigate buffers (,b)
 Plugin 'christoomey/vim-sort-motion'
+Plugin 'tpope/vim-repeat'
+Plugin 'tpope/vim-speeddating'
+"TODO: investigate vim-unimpaired
+"Plugin 'tpope/vim-unimpaired'
 
 " Git
 Plugin 'tpope/vim-fugitive' " :G* git commands
