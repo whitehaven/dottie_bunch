@@ -1,4 +1,3 @@
-# macOS-specific utilities
 
 # set up bash completion for homebrew-installed packages
 if [ -f $(brew --prefix)/etc/bash_completion ]; then
@@ -45,6 +44,23 @@ alias cl="fc -e -|pbcopy"
 # cleanupLS:  Clean up LaunchServices to remove duplicates in the "Open With" menu
 alias cleanupOpenWith="/System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -kill -r -domain local -domain system -domain user && killall Finder"
 
-# added by Anaconda3 4.3.1 installer
-export PATH="/Users/accrist/anaconda3/bin:$PATH"
 
+# full path w/o anaconda executables
+export std_path="/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/TeX/texbin"
+
+export anaconda_path="/Users/accrist/anaconda3/bin"
+
+# default PATH - includes anaconda
+export PATH=$anaconda_path:$std_path
+
+# remove anaconda from path
+pop_anaconda_from_path()
+{
+    export PATH=$std_path
+}
+
+# replace anaconda to path
+push_anaconda_to_path()
+{
+    export PATH=$anaconda_path:$PATH
+}
