@@ -37,10 +37,8 @@ color.uda.priority.U  = magenta  # magenta
 color.uda.priority.S  = rgb215   # purple
 
 # context definitions
-context.work = -home
-context.home = -work
-context.away = -work -home
-context.mtg  = -work -home -out
+context.away = -home
+context.mtg  = -home -out
 
 # display settings
 # - force columns to infinite width
