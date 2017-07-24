@@ -37,8 +37,10 @@ color.uda.priority.U  = magenta  # magenta
 color.uda.priority.S  = rgb215   # purple
 
 # context definitions
-context.away = -home
-context.mtg  = -home -out
+context.out    = -campus -home
+context.campus = -home -out
+context.home   = -campus            # can still go +out prn
+context.mtg    = -home -campus -out # can't leave a place
 
 # display settings
 # - force columns to infinite width
