@@ -4,7 +4,6 @@
 516643804	Frozen Fields
 969743069	Multiple 'Add' and 'Browser' Windows
 2494384865	Button Colours (Good, Again)
-1496166067	Night Mode
 2091361802	Progress Bar # Add 'max-height: 5px;' in line 130 if you want a more thin progress bar like this: https://goo.gl/tjJuRR
 1432861881	Reset card(s) scheduling information / progress
 874215009	Advanced Browser
@@ -14,8 +13,10 @@
 2181333594	Quick note and deck buttons
 734297936	Quick Field Navigation
 1071179937	' Zooming
+2090822731	Handy Answer Keys Shortcuts
 
 # maybe
+1496166067	Night Mode
 886253296	AddCards-Tagselector
 924298715	Editor Autocomplete
 590899480	Improved Quizlet to Anki Importer
