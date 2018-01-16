@@ -9,6 +9,4 @@ alias ld="ls -ldF"
 
 export TZ='America/Denver'
 
-eval "$(fasd --init auto)"
-
 eval "$(pandoc --bash-completion)"
