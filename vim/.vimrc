@@ -74,31 +74,31 @@ Plugin 'ntpeters/vim-better-whitespace'
 Plugin 'BlindFS/vim-taskwarrior'
 
 " General language tools
-Plugin 'Valloric/YouCompleteMe' " code completion engine for C-family/Python/etc.
+"Plugin 'Valloric/YouCompleteMe' " code completion engine for C-family/Python/etc.
 "                                " https://github.com/Valloric/YouCompleteMe#installation
-Plugin 'rdnetto/YCM-Generator' " :YcmGenerateConfig to generate a config in current folder
-Plugin 'eagletmt/neco-ghc'
+"Plugin 'rdnetto/YCM-Generator' " :YcmGenerateConfig to generate a config in current folder
+"Plugin 'eagletmt/neco-ghc'
 " C language-specific
 "Plugin 'Rip-Rip/clang_complete'
 
 " Python language-specific
 "Plugin 'nvie/vim-flake8'
-Plugin 'davidhalter/jedi-vim'
+"Plugin 'davidhalter/jedi-vim'
 
 " TODO: look at snippet inserter
 " Track the engine.
-Plugin 'SirVer/ultisnips'
+"Plugin 'SirVer/ultisnips'
 
 " Snippets are separated from the engine. Add this if you want them:
-Plugin 'honza/vim-snippets'
+"Plugin 'honza/vim-snippets'
 
-"" Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
-let g:UltiSnipsExpandTrigger="<tab>"
-let g:UltiSnipsJumpForwardTrigger="<c-b>"
-let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+""" Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
+"let g:UltiSnipsExpandTrigger="<tab>"
+"let g:UltiSnipsJumpForwardTrigger="<c-b>"
+"let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 
-" If you want :UltiSnipsEdit to split your window.
-let g:UltiSnipsEditSplit="vertical"
+"" If you want :UltiSnipsEdit to split your window.
+"let g:UltiSnipsEditSplit="vertical"
 
 call vundle#end()
 

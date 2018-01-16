@@ -75,25 +75,25 @@ color.uda.dfd               = underline
 
 # next report
 # - add UDA dfd
-report.next.columns     = id,start.age,entry.age,depends,priority,project,tags,dfd,recur,scheduled.relative,due.relative,until.remaining,description.count,urgency
+report.next.columns     = id,start.age,entry.age,depends,priority,project,tags,recur,scheduled.countdown,due.remaining,until.remaining,dfd,description,urgency
 report.next.description = Most urgent tasks
 report.next.filter      = status:pending limit:page
-report.next.labels      = ID,Active,Age,Deps,P,Project,Tag,DfdTo,Recur,S,Due,Until,Description,Urg
+report.next.labels      = ID,Active,Age,Deps,P,Project,Tag,Recur,S,Due,Until,DfdTo,Description,Urg
 report.next.sort        = urgency-
 
 # ready report
 # - filter out deferred tasks
 # - put started tasks at top, regardless of urgency
 # - limit to page
-report.ready.columns     = id,start.age,entry.age,depends.indicator,priority,project,tags,dfd,recur.indicator,scheduled.relative,due.relative,until.remaining,description.count,urgency
-report.ready.description = Most urgent actionable tasks
+report.ready.columns     = id,start.age,entry.age,depends.indicator,priority,project,tags,recur.indicator,scheduled.countdown,due.countdown,until.remaining,description,urgency
+#report.ready.description = Most urgent actionable tasks
 report.ready.filter      = +READY limit:page dfd.none:
-report.ready.labels      = ID,Active,Age,D,P,Project,Tags,DfdTo,R,S,Due,Until,Description,Urg
-report.ready.sort        = start-,urgency-
+report.ready.labels      = ID,Active,Age,D,P,Project,Tags,R,S,Due,Until,Description,Urg
+#report.ready.sort        = start-,urgency-
 
 # deferred report
 # - uses dfd UDA
-report.deferred.columns     = id,status,dfd,scheduled.relative,due.relative,until.remaining,description
+report.deferred.columns     = id,status,dfd,scheduled.countdown,due.countdown,until.remaining,description
 report.deferred.description = Show deferred tasks
 report.deferred.filter      = (status:pending or status:waiting) and dfd.any:
 report.deferred.labels      = ID,Status,DfdTo,Sch,Due,Until,Description
