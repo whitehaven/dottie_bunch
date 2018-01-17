@@ -142,12 +142,7 @@ alias tsf='tmux neww -d "task sync"'
 alias in='task add +in'
 
 # ------------------------------------------------------------
-# SSH Directory
-# ------------------------------------------------------------
-alias drac='ssh accrist@dralexcrist.com'
-
-# ------------------------------------------------------------
-# Python Editing and Environment
+# Python Environment
 # ------------------------------------------------------------
 # find packages updated by pip instad of conda
 alias updated_by_pip="conda list | grep pip | cut -d' ' -f1"
