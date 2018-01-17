@@ -120,9 +120,6 @@ getMACAddress()
   ifconfig en0 | grep ether | awk '{gsub("\tether ","");print}';
 }
 
-# set wget to auto-restart downloads when failed
-alias wget='wget -c'
-
 # ------------------------------------------------------------
 # Taskwarrior Functionality
 # ------------------------------------------------------------
