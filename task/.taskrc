@@ -9,6 +9,8 @@ taskd.server      = taskwarrior.inthe.am:53589
 taskd.credentials = inthe_am/accrist/a503a6de-cd39-455b-b44b-ce5cee55591d
 taskd.trust       = ignore hostname
 
+json.depends.array=off
+
 # tasksh review settings
 uda.reviewed.type            = date
 uda.reviewed.label           = Reviewed
@@ -85,7 +87,7 @@ report.next.sort        = urgency-
 # - filter out deferred tasks
 # - put started tasks at top, regardless of urgency
 # - limit to page
-report.ready.columns     = id,start.age,entry.age,depends.indicator,priority,project,tags,recur.indicator,scheduled.countdown,due.countdown,until.remaining,description,urgency
+report.ready.columns     = id,start.age,entry.age,depends.indicator,priority,project,tags,recur.indicator,scheduled.countdown,due.remaining,until.remaining,description,urgency
 #report.ready.description = Most urgent actionable tasks
 report.ready.filter      = +READY limit:page dfd.none:
 report.ready.labels      = ID,Active,Age,D,P,Project,Tags,R,S,Due,Until,Description,Urg
