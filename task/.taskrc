@@ -1,14 +1,6 @@
 # task data location
 data.location=~/.task
 
-# taskd settings
-taskd.certificate = ~/.task/private.certificate.pem
-taskd.key         = ~/.task/private.key.pem
-taskd.ca          = ~/.task/ca.cert.pem
-taskd.server      = taskwarrior.inthe.am:53589
-taskd.credentials = inthe_am/accrist/a503a6de-cd39-455b-b44b-ce5cee55591d
-taskd.trust       = ignore hostname
-
 json.depends.array=off
 
 # tasksh review settings
@@ -109,3 +101,11 @@ urgency.inherit              = on
 urgency.blocked.coefficient  = 0
 urgency.blocking.coefficient = 4
 report.ready.filter=+READY limit:page dfd.none: priority.not:S
+
+# taskd settings
+taskd.certificate=\/home\/accrist\/.task\/Alex_Crist.cert.pem
+taskd.key=\/home\/accrist\/.task\/Alex_Crist.key.pem
+taskd.ca=\/home\/accrist\/.task\/ca.cert.pem
+taskd.server=dralexcrist.com:53589
+taskd.credentials=WHI\/Alex Crist\/88be24f9-d946-48dc-b0ad-f0bd53b9edb0
+taskd.trust=ignore hostname
