@@ -79,7 +79,7 @@ report.next.sort        = urgency-
 # - filter out deferred tasks
 # - put started tasks at top, regardless of urgency
 # - limit to page
-report.ready.columns     = id,start.age,entry.age,depends.indicator,priority,project,tags,recur.indicator,scheduled.countdown,due.remaining,until.remaining,description,urgency
+report.ready.columns     = id,start.age,entry.age,depends,priority,project,tags,recur.indicator,scheduled.countdown,due.remaining,until.remaining,description,urgency
 #report.ready.description = Most urgent actionable tasks
 report.ready.filter      = +READY limit:page dfd.none:
 report.ready.labels      = ID,Active,Age,D,P,Project,Tags,R,S,Due,Until,Description,Urg
