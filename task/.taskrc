@@ -109,3 +109,4 @@ taskd.ca=\/home\/accrist\/.task\/ca.cert.pem
 taskd.server=dralexcrist.com:53589
 taskd.credentials=WHI\/Alex Crist\/88be24f9-d946-48dc-b0ad-f0bd53b9edb0
 taskd.trust=ignore hostname
+color.tag.in=white on color202
