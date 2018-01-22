@@ -1,0 +1,75 @@
+7z
+A file archiver with highest compression ratio
+
+Args:
+a       add
+d       delete
+e       extract
+l       list
+t       test
+u       update
+x       extract with full paths
+
+Example:
+7z a -t7z -m0=lzma -mx=9 -mfb=64 -md=32m -ms=on archive.7z dir1
+
+-t7z        7z archive
+-m0=lzma    lzma method
+-mx=9       level of compression = 9 (ultra)
+-mfb=64     number of fast bytes for lzma = 64
+-md=32m     dictionary size = 32 Mb
+-ms=on      solid archive = on
+
+-m0=?
+	lzma	- Efficient compression
+			* (+)	May achieve marginal compression gains compared to lzma2
+			* (--)	Single-core operation only
+	lzma2	- Optimized, multicore lzma
+			* (+++)	multicore optimization means much higher performance
+			* (-)	marginal-to-none loss of compression vs. lzma
+	ppmd	- Prediction by Partial Matching
+			* (+++) *.txt, *.csv (where much of file is text)
+			* (-) 	*.docx - formatting data is not (as) amenable to ppmd
+			* (-) 	binary files - no textual structure
+	bzip2	- Standard FOSS compression
+			* (++)	decent for text-based files
+			* (+)	compatible with any UNIX OS, and FOSS software
+	Deflate	- Standard ZIP and gzip compression
+			* (++) 	compatible anywhere, including naive Windows
+			* (+) 	reasonable performance
+			* (---) very weak compression
+			* (+)	has option Deflate64 to use 64k dict, some benefit
+
+--> Further examples:
+ARCHIVE WITH MAXIMUM COMPRESSION
+7z a -t7z -mx9 folder1.7z folder1
+
+ARCHIVE WITH MAXIMUM COMPRESSION WITH PASSWORD
+7z a -p -t7z -mx9 folder1.7z folder1
+
+# p: 7z will prompt for password
+
+ARCHIVE WITH NO COMPRESSION
+7z a t7z -mx0 folder1.7z folder1
+
+ARCHIVE WITH NO COMPRESSION WITH PASSWORD
+7z a -p -t7z -mx0 folder1.7z folder1
+
+EXTRACT files from archive
+7z x stuff.7z
+
+	Extract to a place:
+	7z x stuff.7x -o{location}
+		e.g.,
+		7z x stuff.7z -o/mnt/disk
+	
+Extract files in ravelled form (ignore directory structure):
+7z e stuff.7z
+
+COMPRESSION SWITCHS
+-mx0 Don't compress at all. Is called "copy mode."
+-mx1 Very low compression. It is called "fastest" mode.
+-mx3 Fast compression mode. Will set various parameters automatically.
+-mx5 Same as above, but "normal."
+-mx7 "maximum" compression.
+-mx9 "ultra" compression. You probably want to use this.
