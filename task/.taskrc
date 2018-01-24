@@ -82,7 +82,7 @@ report.next.sort        = urgency-
 report.ready.columns     = id,start.age,entry.age,depends,priority,project,tags,recur.indicator,scheduled.countdown,due.remaining,until.remaining,description,urgency
 #report.ready.description = Most urgent actionable tasks
 report.ready.filter      = +READY limit:page dfd.none:
-report.ready.labels      = ID,Active,Age,D,P,Project,Tags,R,S,Due,Until,Description,Urg
+report.ready.labels      = ID,Active,Age,D,P,Project,Tags,R,Sch,Due,Until,Description,Urg
 #report.ready.sort        = start-,urgency-
 
 # deferred report
@@ -110,3 +110,4 @@ taskd.server=dralexcrist.com:53589
 taskd.credentials=WHI\/Alex Crist\/88be24f9-d946-48dc-b0ad-f0bd53b9edb0
 taskd.trust=ignore hostname
 color.tag.in=white on color202
+rule.precedence.color=deleted,completed,active,keyword.,uda.,tag.,project.,overdue,scheduled,due.today,due,blocked,blocking,recurring,tagged
