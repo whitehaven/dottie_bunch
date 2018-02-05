@@ -1,1 +1,2 @@
-export docs='/data/data/com.termux/files/home/storage/shared/Documents'
+source /data/data/com.termux/files/usr/share/doc/task/scripts/bash/task_functions.sh
+source /data/data/com.termux/files/usr/share/doc/task/scripts/bash/task.sh
