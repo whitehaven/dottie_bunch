@@ -1,5 +1,4 @@
 alias ls='ls -F --color=auto'
-alias l='ls'
 alias ll='ls -lhF'
 alias lp='ll | less'
 alias lr='ll -R'
