@@ -101,6 +101,7 @@ urgency.inherit              = on
 urgency.blocked.coefficient  = 0
 urgency.blocking.coefficient = 4
 report.ready.filter=+READY limit:page dfd.none: priority.not:S
+urgency.user.tag.in.coefficient=8
 
 # taskd settings
 taskd.certificate=\/home\/accrist\/.task\/Alex_Crist.cert.pem
