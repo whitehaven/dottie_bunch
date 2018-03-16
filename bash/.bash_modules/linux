@@ -1,5 +1,4 @@
 alias ls='ls --file-type --color=auto'
-alias l='ls'
 alias ll='ls -lh --file-type'
 alias lp='ll | less'
 alias lr='ll -R'
