@@ -111,7 +111,7 @@ taskd.server=dralexcrist.com:53589
 taskd.credentials=WHI\/Alex Crist\/88be24f9-d946-48dc-b0ad-f0bd53b9edb0
 taskd.trust=ignore hostname
 color.tag.in=white on color202
-rule.precedence.color=deleted,completed,active,keyword.,uda.,tag.,project.,overdue,scheduled,due.today,due,blocked,blocking,recurring,tagged
+rule.precedence.color=deleted,completed,overdue,due.today,active,keyword.,tag.,project.,scheduled,due,uda.,blocked,blocking,recurring,tagged
 
 # report sorted by due
 report.ds.description=Simple List of Tasks Sorted by Due Date
@@ -119,3 +119,5 @@ report.ds.columns=id,project,description,due.remaining
 report.ds.sort=due+
 report.ds.labels=ID,Proj,Desc,Due
 report.ds.filter=status:pending limit:page
+color.scheduled=white on rgb001
+color.overdue=white on red
