@@ -114,10 +114,11 @@ color.tag.in=white on color202
 rule.precedence.color=deleted,completed,overdue,due.today,active,keyword.,tag.,project.,scheduled,due,uda.,blocked,blocking,recurring,tagged
 
 # report sorted by due
-report.ds.description=Simple List of Tasks Sorted by Due Date
-report.ds.columns=id,project,description,due.remaining
-report.ds.sort=due+
-report.ds.labels=ID,Proj,Desc,Due
-report.ds.filter=status:pending limit:page
+report.dues.description=Simple List of Tasks Sorted by Due Date
+report.dues.columns=id,project,description,due.remaining
+report.dues.sort=due+
+report.dues.labels=ID,Proj,Desc,Due
+report.dues.filter=status:pending limit:page
+
 color.scheduled=white on rgb001
 color.overdue=white on red
