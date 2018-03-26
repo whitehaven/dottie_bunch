@@ -120,5 +120,10 @@ report.dues.sort=due+
 report.dues.labels=ID,Proj,Desc,Due
 report.dues.filter=status:pending limit:page
 
+# all report sorted by due, including dependency ids
+report.all.columns=id,status.short,uuid.short,start.active,entry.age,end.age,depends,priority,project.parent,tags.count,recur.indicator,wait.remaining,scheduled.remaining,due,until.remaining,description
+report.all.sort=due-
+report.all.labels=ID,St,UUID,A,Age,Done,D,P,Project,Tags,R,Wait,Sch,Due,Until,Description
+
 color.scheduled=white on rgb001
 color.overdue=white on red
