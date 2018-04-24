@@ -123,3 +123,6 @@ report.all.labels=ID,St,UUID,A,Age,Done,D,P,Project,Tags,R,Wait,Sch,Due,Until,De
 
 color.scheduled=white on rgb001
 color.overdue=white on red
+
+# setting to prevent duplication of recurrence - only home computer is on, AO off
+recurrence=off
