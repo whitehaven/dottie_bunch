@@ -111,10 +111,10 @@ rule.precedence.color=deleted,completed,overdue,due.today,active,keyword.,tag.,p
 
 # report sorted by due
 report.dues.description=Simple List of Tasks Sorted by Due Date
-report.dues.columns=id,project,description,due.remaining
+report.dues.columns=id,depends,project,description,due.remaining,wait.remaining,urgency
 report.dues.sort=due+
-report.dues.labels=ID,Proj,Desc,Due
-report.dues.filter=status:pending limit:page
+report.dues.labels=ID,Dep,Proj,Desc,Due,Wait,Urg
+report.dues.filter=(status:pending or status:waiting) limit:page
 
 # all report sorted by due, including dependency ids
 report.all.columns=id,status.short,uuid.short,start.active,entry.age,end.age,depends,priority,project.parent,tags.count,recur.indicator,wait.remaining,scheduled.remaining,due,until.remaining,description
