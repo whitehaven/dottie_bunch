@@ -44,6 +44,15 @@ mcd()
   mkdir $1 && cd $1;
 }
 
+# calculate file/dir size
+dush() {
+  if [ $# -eq 0 ]; then
+    du -sh * | sort -hr
+  else
+    du -sh $1 | sort -hr
+  fi
+}
+
 # cd assist
 alias cd..='cd ..'
 alias ..='cd ..'
