@@ -1,3 +1,0 @@
-# fwatch -null terminator -one result per update -latency of 30s {dir} |
-# run -null terminator -use less than 1 arg {command}
-fswatch -0 -o -l 30 .task/ | xargs -0 -n1 task sync
