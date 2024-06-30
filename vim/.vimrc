@@ -18,30 +18,16 @@ call vundle#begin()
 
 Plugin 'gmarik/Vundle.vim' " let Vundle manage itself
 
-" color schemes
-Plugin 'rafi/awesome-vim-colorschemes'
-Plugin 'altercation/vim-colors-solarized'
-
 " Filesystem
 Plugin 'scrooloose/nerdtree' " filesystem explore (F12)
 Plugin 'Xuyuanp/nerdtree-git-plugin'
 Plugin 'kien/ctrlp.vim' " file/buffer fuzzy finder (Ctrl+F)
-Plugin 'Shougo/denite.nvim'
 
 " Utilities
 Plugin 'Townk/vim-autoclose' " autocomplete open-close pairs, e.g: () {} <> []
-"TODO: investigate/replace YankRing.vim or resolve conflict with ctrlp
-Plugin 'svermeulen/vim-easyclip'
-Plugin 'ervandew/supertab' " <Tab> everything!
-"TODO: investigate vim-startify
-"Plugin 'mhinz/vim-startify' " a start screen for vim!
 Plugin 'easymotion/vim-easymotion' " quick move with ,,(movement)
 Plugin 'jeetsukumaran/vim-buffergator' " list & navigate buffers (,b)
 Plugin 'christoomey/vim-sort-motion'
-Plugin 'tpope/vim-repeat'
-Plugin 'tpope/vim-speeddating'
-"TODO: investigate vim-unimpaired
-"Plugin 'tpope/vim-unimpaired'
 
 " Git
 Plugin 'tpope/vim-fugitive' " :G* git commands
@@ -58,47 +44,14 @@ Plugin 'vim-pandoc/vim-pandoc-syntax'
 " Code editing
 Plugin 'pseewald/vim-anyfold'
 Plugin 'scrooloose/syntastic' " syntax checker
-"TODO: investigate ListToggle/quickfix/location-list
 "Plugin 'Valloric/ListToggle' " easily toggle the quickfix and location-list
 Plugin 'scrooloose/nerdcommenter'
-"TODO: learn to use vim-surrount
-Plugin 'tpope/vim-surround'
 Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'ntpeters/vim-better-whitespace'
 
-" Tags
-" TODO: decide if tags are worth including
-" Plugin 'ludovicchabant/vim-gutentags' " A Vim plugin that manages your tag files
-" Plugin 'majutsushi/tagbar' " tags window tree (F8) (definitions/function/etc.)
-
-" Plugin 'BlindFS/vim-taskwarrior'
-
-" General language tools
-"Plugin 'Valloric/YouCompleteMe' " code completion engine for C-family/Python/etc.
-"                                " https://github.com/Valloric/YouCompleteMe#installation
-"Plugin 'rdnetto/YCM-Generator' " :YcmGenerateConfig to generate a config in current folder
-"Plugin 'eagletmt/neco-ghc'
-" C language-specific
-"Plugin 'Rip-Rip/clang_complete'
-
 " Python language-specific
 "Plugin 'nvie/vim-flake8'
-"Plugin 'davidhalter/jedi-vim'
-
-" TODO: look at snippet inserter
-" Track the engine.
-"Plugin 'SirVer/ultisnips'
-
-" Snippets are separated from the engine. Add this if you want them:
-"Plugin 'honza/vim-snippets'
-
-""" Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
-"let g:UltiSnipsExpandTrigger="<tab>"
-"let g:UltiSnipsJumpForwardTrigger="<c-b>"
-"let g:UltiSnipsJumpBackwardTrigger="<c-z>"
-
-"" If you want :UltiSnipsEdit to split your window.
-"let g:UltiSnipsEditSplit="vertical"
+Plugin 'davidhalter/jedi-vim'
 
 call vundle#end()
 
@@ -121,13 +74,13 @@ set fileformats=unix,dos
 " use indentation from the previous line
 set autoindent
 
-" configure editor with tabs and nice stuff...
-set expandtab           " enter spaces when tab is pressed
-set textwidth=120       " break lines when line length increases
-set tabstop=4           " use 4 spaces to represent tab
-set softtabstop=4
-set shiftwidth=4        " number of spaces to use for auto indent
-set autoindent          " copy indent from current line when starting a new line
+" configure tab handling (spaces instead of tabs, etc.)
+set tabstop=2
+set softtabstop=2
+set shiftwidth=2
+set shiftround
+set expandtab " Use spaces instead of tabs
+set smarttab " smarter tabs
 
 " color scheme for vim-indent-guides
 let g:indent_guides_guide_size = 1
@@ -155,7 +108,6 @@ endif
 set t_Co=256
 let g:rehash256=1 " better colors for 256-color terminals
 set background=dark
-colorscheme solarized
 
 syntax on
 
@@ -275,6 +227,11 @@ noremap <silent> <c-l> <c-w>l
 noremap <silent> <c-h> <c-w>h
 noremap <silent> <c-Up> <c-w><c-w>
 noremap <silent> <c-Down> <c-w><s-w>
+" Resize windows
+noremap <silent> + <c-w>+
+noremap <silent> _ <c-w>-
+noremap <silent> < <c-w><
+noremap <silent> > <c-w>>
 
 " Mappings - various shortcuts
 " ============================
@@ -391,10 +348,6 @@ map <silent> <F12> :NERDTreeToggle<cr>
 map <silent> <S-F12> :NERDTreeFind<cr>
 " closes vim if the only buffer left is nerdtree
 " autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
-
-" neco_ghc Haskell autocomplete (usable with YouCompleteMe)
-let g:ycm_semantic_triggers={'haskell' : ['.']}
-let g:necoghc_enable_detailed_browse=1
 
 "  " clang_complete
 "  " ==============
