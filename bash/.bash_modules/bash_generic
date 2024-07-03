@@ -131,24 +131,6 @@ getMACAddress()
 }
 
 # ------------------------------------------------------------
-# Taskwarrior Functionality
-# ------------------------------------------------------------
-# taskwarrior shortcuts
-alias t='task '
-alias tn='task next'
-alias tna='task limit: next'
-alias ty='task ready'
-alias tya='task limit: ready'
-alias tc='task context '
-alias tcn='task context none'
-alias ta='task add '
-alias ts='task sync'
-alias tsf='tmux neww -d "task sync"'
-
-# ultra-fast inbox, auto-adds in tag on the way in - see .taskrc for inbox report
-alias in='task add +in'
-
-# ------------------------------------------------------------
 # Python Environment
 # ------------------------------------------------------------
 # find packages updated by pip instad of conda
