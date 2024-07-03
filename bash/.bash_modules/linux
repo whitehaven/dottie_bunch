@@ -6,6 +6,4 @@ alias la='ls -Alh --file-type'
 alias lh='ls -A --file-type'
 alias ld='ls -ld --file-type'
 
-export TZ='America/Denver'
-
 eval "$(pandoc --bash-completion)"

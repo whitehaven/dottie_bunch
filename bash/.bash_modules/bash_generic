@@ -3,7 +3,6 @@
 # ------------------------------------------------------------
 export TERM='xterm-256color'
 
-# TODO: see if using which like this is dangerous
 export VISUAL=$( which vim )
 export EDITOR=$( which vim )
 
