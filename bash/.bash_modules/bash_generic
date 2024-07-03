@@ -87,6 +87,16 @@ fnr() #fire-and-[read|remember]
   tmux new-window -d "$@; read"
 }
 
+# Go-based Powerline
+
+GOPATH=$HOME/go
+function _update_ps1() {
+    PS1="$($GOPATH/bin/powerline-go -error $?)"
+}
+if [ "$TERM" != "linux" ] && [ -f "$GOPATH/bin/powerline-go" ]; then
+    PROMPT_COMMAND="_update_ps1; $PROMPT_COMMAND"
+fi
+
 # ------------------------------------------------------------
 # Misc. Application Aliases
 # ------------------------------------------------------------
@@ -100,15 +110,6 @@ alias fgrep='fgrep --color=auto'
 # ------------------------------------------------------------
 alias gs='git status'
 alias gl='git lg'
-
-# used in prompt PS1
-parse_git_branch()
-{
-  git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
-}
-
-# (parse_git_branch): show git branch when in repo
-export PS1="\w\$(parse_git_branch) -> "
 
 # ------------------------------------------------------------
 # TCP/UDP Networking
