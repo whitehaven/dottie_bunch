@@ -15,3 +15,12 @@ elif [ $( uname ) = "Linux" ]; then
 fi
 
 source $HOME/.bash_modules/bash_generic
+
+# IntelliShell
+export INTELLI_HOME=/home/accrist/.local/share/intelli-shell
+# export INTELLI_SEARCH_HOTKEY=\\C-@
+# export INTELLI_LABEL_HOTKEY=\\C-l
+# export INTELLI_BOOKMARK_HOTKEY=\\C-b
+# export INTELLI_SKIP_ESC_BIND=0
+alias intelli-shell="'$INTELLI_HOME/bin/intelli-shell'"
+source "$INTELLI_HOME/bin/intelli-shell.sh"
