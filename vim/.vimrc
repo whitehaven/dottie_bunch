@@ -35,6 +35,8 @@ Plugin 'airblade/vim-gitgutter' " show git diff signs in the gutter column
 
 " Visuals
 Plugin 'bling/vim-airline'
+Plugin 'rafi/awesome-vim-colorschemes'
+Plugin 'altercation/vim-colors-solarized'
 
 " Markdown
 Plugin 'godlygeek/tabular'
@@ -84,6 +86,8 @@ set smarttab " smarter tabs
 
 " color scheme for vim-indent-guides
 let g:indent_guides_guide_size = 1
+
+colorscheme solarized8_high
 
 " maximum width of inserted text (80 is too small for modern displays)
 set textwidth=120
@@ -297,7 +301,7 @@ endif
 " =========
 set laststatus=2 " always show the statusline
 set noshowmode " don't show '-- INSERT --' too
-let g:lightline = {'colorscheme': 'solarized dark'}
+" let g:lightline = {'colorscheme': 'solarized dark'}
 
 " syntastic
 " =========
