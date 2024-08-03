@@ -1,12 +1,1 @@
 .DS_Store
-
-# don't store taskwarrior task data
-task/.task/*.data
-
-# don't store timewarrior data either
-timewarrior/.timewarrior/data/
-
-# nor vim-taskwarrior history
-task/.task/.vim_tw.history
-ssh/.ssh/authorized_keys
-ssh/.ssh/known_hosts
